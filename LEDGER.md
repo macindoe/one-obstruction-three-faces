@@ -38,3 +38,19 @@ Status vocabulary: `proposed` / `one key` / `two keys` / `refuted` / `corrected`
 
 **Artifacts — Macindoe:** `experiments/merle_pincer_check.py` (item 3).
 **Artifacts — Merle:** *(to be linked.)*
+
+---
+
+## L-A1 — The transport recurrence (Merle & Macindoe, correspondence 2026-07-18)
+
+**DRAFT — for co-editing (Ben, 2026-07-18; per the reply of the same date).**
+
+The rotation numerators of the period-p elimination satisfy 2^{sigma_r} R_{r+1} = 3^{m_r} R_r + (2^{s_r} − 1) q exactly, for every profile with entries ≥ 1, no closure, either sign of q. Corollaries: gcd(q, R_r) is rotation-invariant, and q | R_0 iff q | R_r for all r — the p divisibility conditions are one condition (the size conditions q ≤ R_r do not collapse). Found independently and essentially simultaneously by E. Merle (integer form, correspondence 2026-07-18) and this repository (fixed-point form, Lemma 14.15.9.2, merged 2026-07-17); the seam identity N_r + q = 2^{m_r} R_r identifying the two frames was first stated in the joint verification. Status: both keys turned on the mathematics; Lean artifact pending (Merle). Cross-stack test vectors for the Lean artifact at `macindoe/collatz`, `experiments/transport_recurrence_vectors.json` (two independent implementations agree on every row; includes the reduction witnesses).
+
+---
+
+## L4 — AEH cross-verification and class spectrum (Merle, correspondence 2026-07-18)
+
+**DRAFT — for co-editing (Ben, 2026-07-18; per the reply of the same date).**
+
+The AEH class skeleton cross-verified by independent implementations on both sides: the two exact class values reproduce (15,515/15,515 his; 19,036/19,036 and 13,987/13,987 ours), P(s = j) tracks 2^{−j}, and the 8-class transfer-matrix spectrum is measured at |lambda_2| ≤ 0.06 (his) and 0.028/0.036 (ours) at cuts 2^20/2^30 — the class chain mixes in effectively one step. Both keys turned at measured grade; scope is the generic face only. The flagged drift artifact (−0.33/−0.36 vs −0.415) is resolved as protocol-level: survivorship bias from the cut, confirmed by fixed-horizon re-measurement returning to theory at both normalizations, with one normalization flag noted (per-odd-step theory −0.415, per-block −0.830).
