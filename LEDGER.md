@@ -58,3 +58,19 @@ The rotation numerators of the period-p elimination satisfy 2^{sigma_r} R_{r+1} 
 The AEH class skeleton cross-verified by independent implementations on both sides: the two exact class values reproduce (15,515/15,515 his; 19,036/19,036 and 13,987/13,987 ours), P(s = j) tracks 2^{−j}, and the 8-class transfer-matrix spectrum is measured at |lambda_2| ≤ 0.06 (his) and 0.028/0.036 (ours) at cuts 2^20/2^30 — the class chain mixes in effectively one step. Both keys turned at measured grade; scope is the generic face only. The flagged drift artifact (−0.33/−0.36 vs −0.415) is resolved as protocol-level: survivorship bias from the cut, confirmed by fixed-horizon re-measurement returning to theory at both normalizations, with one normalization flag noted (per-odd-step theory −0.415, per-block −0.830).
 
 **Artifacts — Merle (2026-07-18):** [`experiments/test_REQ-MATH-009`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/804a8a7/experiments/test_REQ-MATH-009_transfer_spectrum.py) — independent F-map (canaries `F(1,1)=(1,1)`, block of 7 → exit 13), the two exact AEH class values, and the 8-class transfer-matrix spectrum (`|λ₂| ≤ 0.06`, gap ≈ 0.95), with the cut-sensitivity control and the declared survivorship flag.
+
+---
+
+## L-A2 — The repeated-word gcd law (Merle proposal, round 5; correspondence 2026-07-19)
+
+**DRAFT — for co-editing (Ben, 2026-07-19; per the round-5 correspondence).**
+
+For every profile `P = B^j` (`j ≥ 2`): `gcd(q_P, R_0(P)) = |q_P|/q_red(B)`, `q_red(B) = |q_B|/gcd(q_B, R_0(B))` — forced `> 1`, sign-blind; a repeated word is divisible iff its base is, and then realizes the base's cycle traversed `j` times, never a new one. Closed with complete elementary cause (fixed-point invariance under repetition + the seam identity), `briefs/prime-local-probe-findings.md` (2026-07-18); re-verified on all 384 repeated words of the `k ≤ 10` map (round-5 check). Did real work in his `k = 5` sweep (swept the one false survivor a priori). Keys: his `a67970f` scripts + our `experiments/prime_local_probe.py` and `experiments/merle_round5_check.py`.
+
+---
+
+## L-A3 — The anchored loops, the spent `|q| = 1` stock, and the Benford side-asymmetry (Macindoe candidate, correspondence 2026-07-19)
+
+**DRAFT — for co-editing (Ben, 2026-07-19; per the round-5 correspondence).**
+
+The four known cycles anchored to tower near-misses; the `|q| = 1` lock free and its stock exactly three (Gersonides 1342/43; Mihailescu not needed); `−17` the single nontrivial-divisibility instance; the envelope `q_+ + q_− = 2^{⌊kL⌋}`; the side-asymmetry `log₂(3/2)` (absolute) vs 50/50 (ratio), with the `k = 1` exact tie; the exhaustive `k ≤ 10` map = `{+1}` ∪ `{−1, −5, −17}`. Keys: his `a67970f` (REQ-MATH-010/011) + our `experiments/merle_round5_check.py` (211,047 checks, 0 failures). Framing clause (the note's brick): the finite-pure mechanism is a spent finite stock, so every remaining candidate needs the finite-place × archimedean coupling — consistent with, and joined to, the prime-local structureless verdict.
