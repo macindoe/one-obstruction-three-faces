@@ -31,4 +31,4 @@ Flat, calibrated prose. Heuristics labeled as heuristics; assessed ≠ proved; n
 
 ## 7. Publication
 
-The note publishes only when both sides agree; venue and licensing decided jointly. This repository starts private; making it public is proposed as the default once the protocol is agreed — *(accept/decline here.)*
+The note publishes only when both sides agree; venue and licensing decided jointly. This repository starts private; making it public is proposed as the default once the protocol is agreed — **accepted (Merle, 2026-07-19; per the correspondence: "yes to the repo, yes to the protocol"). The repository is public.** Venue signal to date: three independent readings converge on a number-theory-shaped home with the formalization as supporting artifact.
