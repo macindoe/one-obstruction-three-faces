@@ -15,7 +15,7 @@ Status vocabulary: `proposed` / `one key` / `two keys` / `refuted` / `corrected`
 - All four of Merle's calibration measurements reproduce exactly in the Macindoe stack: `p=21, n=15601 → (3, −2.27)`; `p=22, n=25217 → (9, −7.86)`; `p=22, n=31202 → (6, −4.80)`; `p=23, n=47468 → (4, −3.77)`.
 
 **Artifacts — Macindoe:** [`cycles.md` §12.8.6](https://github.com/macindoe/collatz/blob/28e578f/cycles.md) (resolved obstruction, extended record); `experiments/merle_pincer_check.py` (margins, calibration, distances); `experiments/p22_passer.py` (standalone certificate verification from the rotation identity alone); `briefs/merle-pincer-check-findings.md` (full diagnostic record, including the dissolved p=23 retrieval-glyph incident).
-**Artifacts — Merle:** *(to be linked: the pincer measurements, the canary-checked scripts.)*
+**Artifacts — Merle (2026-07-18):** [`experiments/test_REQ-MATH-002`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/804a8a7/experiments/test_REQ-MATH-002_cf_log23_p22gap.py) — CF of log₂3, the good-`n` grid and the p=22 hole (shadow of partial quotient 23); [`experiments/test_REQ-MATH-005`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/804a8a7/experiments/test_REQ-MATH-005_localglobal_p22margins.py) — pre-correction margins at p=21/22/23 (the pincer) and calibration distances. Both canary-checked, exact big-integer arithmetic.
 
 ---
 
@@ -26,7 +26,7 @@ Status vocabulary: `proposed` / `one key` / `two keys` / `refuted` / `corrected`
 **Status: `two keys` (2026-07-16).** Merle: fresh code, conventions re-derived from the published paper only — `γ = 6.7438`, size 7/7, divisibility 0/7. Macindoe: `cycles.md` 12.8.3 (original record), re-verified independently in `experiments/staircase_allp.py` (cross-check) and `experiments/p22_passer.py` (anchor).
 
 **Artifacts — Macindoe:** as above, commit-pinned via L1's link.
-**Artifacts — Merle:** *(to be linked.)*
+**Artifacts — Merle (2026-07-18):** [`experiments/test_REQ-MATH-003`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/804a8a7/experiments/test_REQ-MATH-003_staircase_p7_twokey.py) — fresh-code re-verification (γ = 6.7438, size 7/7, divisibility 0/7); canary = the trivial cycle `R_r = 4^p − 3^p`.
 
 ---
 
@@ -37,7 +37,7 @@ Status vocabulary: `proposed` / `one key` / `two keys` / `refuted` / `corrected`
 **Status: `two keys` (2026-07-17), with one structural sharpening.** Macindoe re-run: distance profile `[0.0538, 0.4784]`, rotation by rotation, matching. Sharpening: the local solvabilities are structural for the *entire* family, not a measured property of the instance — `q = 2^K − 3^n` is odd and `≡ (−1)^K (mod 3)` for every configuration — so the local-global defect is generic and the uniform-distance measurement is the substantive content.
 
 **Artifacts — Macindoe:** `experiments/merle_pincer_check.py` (item 3).
-**Artifacts — Merle:** *(to be linked.)*
+**Artifacts — Merle (2026-07-18):** [`experiments/test_REQ-MATH-005`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/804a8a7/experiments/test_REQ-MATH-005_localglobal_p22margins.py) part A — the closure equation `ω·q = R_r` solvable over ℝ, ℤ₂, ℤ₃ and never ℤ on the p=7 instance, with the uniform distance-to-integrality profile across rotations.
 
 ---
 
@@ -56,3 +56,5 @@ The rotation numerators of the period-p elimination satisfy 2^{sigma_r} R_{r+1} 
 **DRAFT — for co-editing (Ben, 2026-07-18; per the reply of the same date).**
 
 The AEH class skeleton cross-verified by independent implementations on both sides: the two exact class values reproduce (15,515/15,515 his; 19,036/19,036 and 13,987/13,987 ours), P(s = j) tracks 2^{−j}, and the 8-class transfer-matrix spectrum is measured at |lambda_2| ≤ 0.06 (his) and 0.028/0.036 (ours) at cuts 2^20/2^30 — the class chain mixes in effectively one step. Both keys turned at measured grade; scope is the generic face only. The flagged drift artifact (−0.33/−0.36 vs −0.415) is resolved as protocol-level: survivorship bias from the cut, confirmed by fixed-horizon re-measurement returning to theory at both normalizations, with one normalization flag noted (per-odd-step theory −0.415, per-block −0.830).
+
+**Artifacts — Merle (2026-07-18):** [`experiments/test_REQ-MATH-009`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/804a8a7/experiments/test_REQ-MATH-009_transfer_spectrum.py) — independent F-map (canaries `F(1,1)=(1,1)`, block of 7 → exit 13), the two exact AEH class values, and the 8-class transfer-matrix spectrum (`|λ₂| ≤ 0.06`, gap ≈ 0.95), with the cut-sensitivity control and the declared survivorship flag.
