@@ -27,7 +27,7 @@ Flat, calibrated prose. Heuristics labeled as heuristics; assessed ≠ proved; n
 ## 6. Working conditions, disclosed
 
 - Macindoe's side: research direction and standards of evidence are the author's; mathematical development is carried out with an AI collaborator under the documented protocol of the main repository (`AGENTS.md` there), and that includes contributions to this note and this correspondence.
-- Merle's side: *(to be stated in his words.)*
+- Merle's side: research direction and standards of evidence are the author's; the mathematical development is carried out with an AI collaborator (Claude) under the A.R.E.S. protocol (independent second key, zero bibliographic recall, every assertion traceable to a runnable check), and the Lean kernel is the final arbiter — a model cannot bluff a compiler. This includes contributions to this note and this correspondence. The Lean stack lives at `ericmerle3789/one-obstruction-three-faces-lean`.
 
 ## 7. Publication
 
