@@ -22,7 +22,7 @@ Reduced coordinates and the anchor walk; the transport recurrence and the collap
 
 ## 4. Face III — the seam (local–global)
 
-The closure equation solvable over ℝ, over ℤ₂, over ℤ₃ at every rotation and over ℤ at none; the uniform distance-to-integrality [L3]; the prime-local probe structureless (no coset confinement, no coarse-invariant law) joined to the spent-stock framing: **no finite place alone will do it** — whatever excludes positive cycles must couple the archimedean place to the finite ones. The realization-height theorem (Macindoe wiki, `itinerary.md` §14.15.5(b), Corollary 14.15.5.4 — the combined characterization; the wrong-sign clause at §14.15.5(c)): an itinerary is realized by an integer iff its 2-adic and 3-adic limits coincide at a positive integer; the classical negative cycles reappear as diagonal points of the wrong sign.
+The closure equation solvable over ℝ, over ℤ₂, over ℤ₃ at every rotation and over ℤ at none; the uniform distance-to-integrality [L3]; the prime-local probe structureless (no coset confinement, no coarse-invariant law) joined to the spent-stock framing: **no finite place alone will do it** — whatever excludes positive cycles must couple the archimedean place to the finite ones. The realization-height theorem (Macindoe wiki, `itinerary.md` §14.15.5(b), Corollary 14.15.5.4 — the combined characterization; the wrong-sign clause at §14.15.5(c)): an itinerary is realized by an integer iff its 2-adic and 3-adic limits coincide at a positive odd integer; the classical negative cycles reappear as diagonal points of the wrong sign.
 
 ## 5. The quantitative complements
 
