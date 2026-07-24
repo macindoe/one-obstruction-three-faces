@@ -112,7 +112,7 @@ Two offers, inside the entry per the co-edit style — acceptance is Merle's cal
 
 ## L-A5 — The adelic content invariant and the separation lemma (Merle, correspondence 2026-07-24)
 
-**DRAFT — one key (Merle side: Lean kernel + independent scripts); Macindoe key invited.**
+**Two keys (Merle: Lean kernel + independent scripts; Macindoe: clean-room re-derivation, 2026-07-25). Closing gloss restated per Macindoe offer (a) — adjacency separation, not the wall; `|q| > 1` domain per offer (b).**
 
 The content `C(P) = log gcd(q, R_0) / log |q| ∈ [0,1]` (rotation-invariant by L-A1's corollary;
 `C = 1 ⟺ cycle`) is the normalized fixed-point denominator collapse — the fixed-point-denominator
@@ -129,9 +129,7 @@ numerator `W0 = 2^{m_0} R_0`, same gcd with the odd `q`): the s-transfer differe
 coordinates (the boundary case is regular there). **Corollary:** a common divisor of `q` shared by
 two neighbours divides the letter-scale seam `3^{m_2} − 2^{m_2}` resp. `2^{s_1} − 1` — the letter
 constant being exactly the composed one-letter constant of Macindoe's affine law (`itinerary.md`,
-`β` and `G(y)`); with `m = 1`: shared content 1, total isolation. So content towers have no
-shoulders: the only road to `C = 1` is exact repetition, and repetition is sterile [L-A4]. The
-residual gap of NOTE §6 is thereby sharpened: no *aperiodic* word reaches `C = 1`.
+`β` and `G(y)`); with `m = 1`: shared content 1, total isolation. So content towers have no shoulders in the exact sense the lemma proves: **no word is connected to a `C = 1` word by one-unit adjacent transfers** (adjacency separation, T1/T2), and repetition merely *approaches* `C = 1`, reaching it only from a cycle [L-A4]. What the lemma does not exclude — and what NOTE §6's residual gap now names exactly — is an **isolated** aperiodic peak at `C = 1`, unreachable by transfer: the `−17` cycle is precisely such a peak, realized on the negative shore (primitive, `q = −139`, `C = 1`, shared content 1 with all six neighbours, forced by the corollary `gcd(139, 3³ − 2³) = gcd(139, 19) = 1`). The wall, restated: no isolated `C = 1` peak on the positive shore. (Domain: `C` is defined for `|q| > 1`; on the spent-stock `|q| = 1` words it is `0/0` — offer (b), accepted.)
 
 **Artifacts — Merle (2026-07-24), stack `e297d9d`:**
 [`OneObstruction/ContentSeparation.lean`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/e297d9d/OneObstruction/ContentSeparation.lean)
