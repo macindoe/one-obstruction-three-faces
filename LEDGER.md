@@ -92,3 +92,40 @@ The four known cycles anchored to tower near-misses; the `|q| = 1` lock free and
 In the tuned regime, every periodic profile `P` (period `d | gcd(n, S)`, a repeated word in reduced coordinates) is a cycle iff its base is: `q_P | R_0(P) ⟺ q_B | R_0(B)` (fixed-point invariance under repetition, extending L-A2). Hence no structured family contains a *new* cycle — one there would descend to a strictly smaller cycle — and any hypothetical nontrivial cycle must be **aperiodic/generic**. Verified 3,600/3,600 exact over periodic draws (`n ∈ {24, 36, 60}`, `d = 2..6`, base lengths `1..3`); canaries = trivial-cycle inheritance (`([1],[1])` cycle → `B²` cycle, `q = 7`, `R = 7`) and non-cycle base → non-cycle power. Companion measurements closing the naive routes: the odd-step ("no 3-absorption") stratum carries no congruence/gcd rigidity the general family lacks (REQ-MATH-013); the finite-scale near-integer mass is a **size artifact** (94–98% from the degenerate `R_0/q < 1` region, no cycle possible there; REQ-MATH-016). So the residual gap is genuinely the generic-family equidistribution, not a structured escape hatch.
 
 **Artifacts — Merle (2026-07-24), stack `017288f`:** [`REQ-MATH-016`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/017288f/experiments/test_REQ-MATH-016_artefact_taille_et_descente.py) (descent + size-artifact), [`013`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/017288f/experiments/test_REQ-MATH-013_rigidite_strate_sans3.py) (no congruence rigidity), [`014`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/017288f/experiments/test_REQ-MATH-014_capacite_vs_demande.py) (capacity–demand), [`015`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/017288f/experiments/test_REQ-MATH-015_equidistribution_et_structure.py) (Weyl/structure). Canary-checked, exact big-integer arithmetic.
+
+---
+
+## L-A5 — The adelic content invariant and the separation lemma (Merle, correspondence 2026-07-24)
+
+**DRAFT — one key (Merle side: Lean kernel + independent scripts); Macindoe key invited.**
+
+The content `C(P) = log gcd(q, R_0) / log |q| ∈ [0,1]` (rotation-invariant by L-A1's corollary;
+`C = 1 ⟺ cycle`) is the normalized fixed-point denominator collapse — the fixed-point-denominator
+frame is Macindoe's (`cycles.md`, `index.md`); the normalization and the landscape results are the
+new part. Measured landscape (REQ-MATH-018): aperiodic words sit at the pure-chance level at
+sampled depth (max `C` 0.11–0.50, tracking `q`'s wild factorization); repeated words `B^j` climb
+`C → 1` exactly per the L-A2 law; a single-letter change at fixed `q` collapses `C` to background.
+The cliff is now a **theorem**:
+
+**Separation lemma (T1/T2).** For adjacent one-unit transfers at fixed `q` (in the 2-shifted
+numerator `W0 = 2^{m_0} R_0`, same gcd with the odd `q`): the s-transfer difference is
+`2^{mssum(pre)} · 3^{msum(suf)} · 2^{m_1+s_1} · (3^{m_2} − 2^{m_2})` and the m-transfer difference is
+`−2^{mssum(pre)} · 3^{m_2+msum(suf)} · 2^{m_1} · (2^{s_1} − 1)` — valid at every position in W0
+coordinates (the boundary case is regular there). **Corollary:** a common divisor of `q` shared by
+two neighbours divides the letter-scale seam `3^{m_2} − 2^{m_2}` resp. `2^{s_1} − 1` — the letter
+constant being exactly the composed one-letter constant of Macindoe's affine law (`itinerary.md`,
+`β` and `G(y)`); with `m = 1`: shared content 1, total isolation. So content towers have no
+shoulders: the only road to `C = 1` is exact repetition, and repetition is sterile [L-A4]. The
+residual gap of NOTE §6 is thereby sharpened: no *aperiodic* word reaches `C = 1`.
+
+**Artifacts — Merle (2026-07-24), stack `e297d9d`:**
+[`OneObstruction/ContentSeparation.lean`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/e297d9d/OneObstruction/ContentSeparation.lean)
+— T1, T2, separation_T1/T2, q_divisor_coprime, all **kernel-3** (`propext`, `Classical.choice`,
+`Quot.sound`), **0 sorry, no user axioms, no `native_decide`**, non-vacuity canaries inside;
+[`REQ-MATH-018`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/9932f3f/experiments/test_REQ-MATH-018_contenu_adelique.py)
+(content landscape), [`REQ-MATH-019`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/9932f3f/experiments/test_REQ-MATH-019_lemme_separation.py)
+(identities exact 713/713, 604/604; corollary 560/560),
+[`REQ-MATH-020`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/e297d9d/experiments/test_REQ-MATH-020_pont_lean.py)
+(Lean↔Python bridge `W0 = 2^{m_0} R_0`, exact 300/300 each). Anteriority sweep of `macindoe/collatz`
+(2026-07-24): "adjacent transfer", "separation/cliff", "adelic content" — no occurrences; the letter
+constant and the fixed-point-denominator frame are Macindoe's, credited above. Open for co-editing.
