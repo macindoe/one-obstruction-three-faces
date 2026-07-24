@@ -153,3 +153,17 @@ Two offers, inside the entry per the co-edit style — acceptance is Merle's cal
 - *(offer b — domain.)* `C` is `0/0`-undefined at `|q| = 1` — exactly the spent-stock words [L-A3; `cycles.md` 12.6.1.2/12.6.1.3]; a one-clause domain restriction `|q| > 1` (or the convention `C := 1` there, as preferred) closes the interval claim.
 
 **Key status, honestly:** the Macindoe key turns on the invariant, the landscape, and the separation lemma (T1/T2 + corollary) as verified; on the entry's closing gloss it turns **with offer (a)** — the entry reaches **two keys** upon Merle's acceptance of a restatement (his own wording equally welcome). Status stays **DRAFT** with this stated until then.
+
+---
+
+## L-A6 — The calibrated lottery: the two shores' cycle census equals their necklace budget (Merle, correspondence 2026-07-24)
+
+**DRAFT — one key (Merle, measured/assessed grade); Macindoe key invited.**
+
+In the letter alphabet (classical frame, numerator `B` built from the letter constants `β_m = 3^m − 2^m`; frame-agreement `q | B ⟺ q | R_0` checked on every hit), the **complete `C = 1` census at `n ≤ 14`, both shores,** is exactly: the Gersonides freebies (`|q| = 1`: `+1`, `−1`, `−5` — deterministic, outside any lottery), the `−17` orbit at `(n, K) = (7, 11)` (primitive, `q = −139`, the words `(4,3|1,3)` and `(3,4|3,1)` realizing `−17` and `−41`), and the L-A4-forced powers. Nothing else — predictions written before measurement, canaries = the four real cycles' words hand-computed first.
+
+**The lottery, in necklace units** (the necklace is the independent trial — `gcd(q, R_r)` is rotation-invariant by L-A1): south `n ≤ 14`: `λ = 1.12`, primitive necklace-hits **1** (the `−17` — the unique *paid-lock* cycle in existence); north: `λ = 2.64`, primitive hits **0** (`P(0) ≈ 7%`, larger still after the realizability filter — all 18 formal hits observed do realize as true cycles/powers, so the filter only shrinks `λ`). The tail `Σ_{n>14}` decays geometrically at the capacity–demand rate (the (B) constants): south `+0.16`, north `+0.33` through `n = 200`, vanishing beyond; the dominant future cells sit on convergent anchors (`27/17` north, `84/53` south). Cross-checked against the verified range, the north's residual budget — cells whose realizable elements could exceed verification — is `≈ 5·10⁻³` formal cycles.
+
+**Reading, at assessed grade and no higher:** the mirror shore *calibrates* the uniform-residue model — its winnings equal its budget — and under the calibrated model the positive shore's remaining expectation is `~0.005`. The wall's exact role is unchanged and now has odds attached: replace this Poisson statement by rigidity (NOTE §6's gap). Falsifier: any second paid-lock cycle, either shore, breaks the calibration.
+
+**Artifacts — Merle (2026-07-24):** `experiments/test_REQ-MATH-022_miroir_rive_sud.py` (exhaustive census), `experiments/test_REQ-MATH-023_loterie_calibree.py` (necklace correction + tails), outputs committed alongside. Joins L-A3's spent-stock and (B)-margin bricks; census consistent with the known ×3−1 cycle list. Open for co-editing.
