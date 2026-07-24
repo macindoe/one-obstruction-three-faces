@@ -30,7 +30,7 @@ The Benford side-asymmetry: which shore gets the better near-miss is 50/50 in ra
 
 ## 6. What remains, stated exactly
 
-The residual hypothesis, now stated exactly: the **equidistribution of `R_r mod q`** along the aperiodic forced family (the structured refuge closed by descent [L-A4]); strictly weaker than `ProductBoundThreshold`; honestly placed on the ×2×3 gap. The capacity–demand margin is positive and grows linearly — `≈ 0.27·n` in the odd-step stratum, `≈ 0.08·n` in general [L-A3 cadeau B; REQ-MATH-014] — so the no-conspiracy cycle-count decays like `2^(−margin)`, making that one equidistribution the exact remaining gap. No promise past the calculations.
+The residual hypothesis, now stated exactly: the **equidistribution of `R_r mod q`** along the aperiodic forced family (the *arithmetic* distribution of the seam residues across profiles — to be kept terminologically distinct from the ergodic/statistical equidistribution of AEH orbits, `aeh.md 13.6.7`; note that `R_r mod ℓ` is in fact non-uniform at every prime yet unconfined, structural bias strongest at `7 = 2³−1`, consistent with the prime-local probe's *no-coset-confinement* verdict; the structured refuge is closed by descent [L-A4]); strictly weaker than `ProductBoundThreshold`; honestly placed on the ×2×3 gap. The capacity–demand margin is positive and grows linearly — `≈ 0.27·n` in the odd-step stratum, `≈ 0.08·n` in general [L-A3 cadeau B; REQ-MATH-014] — so the no-conspiracy cycle-count decays like `2^(−margin)`, making that one equidistribution the exact remaining gap. No promise past the calculations.
 
 ## 7. Method (the actual novelty for many readers)
 

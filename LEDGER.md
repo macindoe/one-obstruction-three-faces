@@ -136,7 +136,7 @@ residual gap of NOTE §6 is thereby sharpened: no *aperiodic* word reaches `C = 
 **Artifacts — Merle (2026-07-24), stack `e297d9d`:**
 [`OneObstruction/ContentSeparation.lean`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/e297d9d/OneObstruction/ContentSeparation.lean)
 — T1, T2, separation_T1/T2, q_divisor_coprime, all **kernel-3** (`propext`, `Classical.choice`,
-`Quot.sound`), **0 sorry, no user axioms, no `native_decide`**, non-vacuity canaries inside;
+`Quot.sound`), **0 sorry, no user axioms, no `native_decide`**, non-vacuity canaries inside, with the committed [`#print axioms` output](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/905d75b/experiments/ContentSeparation_axioms.txt) (kernel-3, all five theorems) and an explicit unreduced-modulus note in the header (statements are about the raw `q = 2^K − 3^n`, not `q/gcd`);
 [`REQ-MATH-018`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/9932f3f/experiments/test_REQ-MATH-018_contenu_adelique.py)
 (content landscape), [`REQ-MATH-019`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/9932f3f/experiments/test_REQ-MATH-019_lemme_separation.py)
 (identities exact 713/713, 604/604; corollary 560/560),
