@@ -22,7 +22,7 @@ Reduced coordinates and the anchor walk; the transport recurrence and the collap
 
 ## 4. Face III — the seam (local–global)
 
-The closure equation solvable over ℝ, over ℤ₂, over ℤ₃ at every rotation and over ℤ at none; the uniform distance-to-integrality [L3]; the prime-local probe structureless (no coset confinement, no coarse-invariant law) joined to the spent-stock framing: **no finite place alone will do it** — whatever excludes positive cycles must couple the archimedean place to the finite ones. The realization-height theorem (Macindoe wiki, `itinerary.md` §14.15.5(b), Corollary 14.15.5.4 — the combined characterization; the wrong-sign clause at §14.15.5(c)): an itinerary is realized by an integer iff its 2-adic and 3-adic limits coincide at a positive odd integer; the classical negative cycles reappear as diagonal points of the wrong sign.
+The closure equation `ω·q = R_r` is a linear divisibility, so it has **no Hasse gap**: `q | R_r` iff `v_p(R_r) ≥ v_p(q)` at every prime — an integer solution exists exactly when a local one does at each place. The obstruction is therefore **local, at the uncontrollable primes of the seam `q = 2^K − 3^n`**: the `p = 7` instance already fails in `ℤ₇` (`7 | q`, `v_7(q) = 3 > v_7(R_r) = 1`, `gcd(q, R_r) = 7`), which our earlier `ℝ/ℤ₂/ℤ₃`-only reading missed [L3, corrected 2026-07-24]. What survives is that *no single fixed* finite place handles all profiles — the prime-local probe is structureless (no coset confinement, no coarse-invariant law), the obstructing prime tracking the wild factorization of `2^K − 3^n`; so the residual gap is quantitative: whether `R_r mod q` **equidistributes** along the forced family (an equidistribution statement, not a congruence). Structured (periodic) profiles are closed by descent — a cycle there forces a strictly smaller one — so any new cycle is aperiodic [L-A4]. The realization-height theorem (Macindoe wiki, `itinerary.md` §14.15.5(b), Corollary 14.15.5.4 — the combined characterization; the wrong-sign clause at §14.15.5(c)): an itinerary is realized by an integer iff its 2-adic and 3-adic limits coincide at a positive odd integer; the classical negative cycles reappear as diagonal points of the wrong sign.
 
 ## 5. The quantitative complements
 
@@ -30,7 +30,7 @@ The Benford side-asymmetry: which shore gets the better near-miss is 50/50 in ra
 
 ## 6. What remains, stated exactly
 
-The residual hypothesis (anchor-walk rigidity beyond the spent stock), its relation to `ProductBoundThreshold` (strictly weaker), and its honest placement on the ×2×3 gap. No promise past the calculations.
+The residual hypothesis, now stated exactly: the **equidistribution of `R_r mod q`** along the aperiodic forced family (the structured refuge closed by descent [L-A4]); strictly weaker than `ProductBoundThreshold`; honestly placed on the ×2×3 gap. The capacity–demand margin is positive and grows linearly — `≈ 0.27·n` in the odd-step stratum, `≈ 0.08·n` in general [L-A3 cadeau B; REQ-MATH-014] — so the no-conspiracy cycle-count decays like `2^(−margin)`, making that one equidistribution the exact remaining gap. No promise past the calculations.
 
 ## 7. Method (the actual novelty for many readers)
 
