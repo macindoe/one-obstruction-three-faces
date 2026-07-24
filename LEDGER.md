@@ -110,6 +110,10 @@ Two offers, inside the entry per the co-edit style — acceptance is Merle's cal
 - *(offer b — vocabulary.)* "aperiodic/generic" → "**primitive** (not a proper power of a shorter word)/generic" — the finite-word-correct term for the descent's conclusion, mirroring the "positive odd integer" precision.
 ---
 
+**Lean key on the structured half (Merle, 2026-07-24, stack `67c428a`).** [`OneObstruction/ContentDescent.lean`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/67c428a/OneObstruction/ContentDescent.lean): the cocycle `W0(l1 ++ l2) = 3^(msum l2)*W0(l1) + 2^(mssum l1)*W0(l2)`, Macindoe's multiplicative identity in W0 form (`power_mult`: `W0(B^k) = G_k * W0(B)`), the seam scaling (`q_pow_factor`: `q(B^k) = G_k * q(B)`, same cofactor), **`cycle_iff` both directions** (k >= 1; no new cycle from repetition — the L-A4 statement itself), and **`gcd_climb`** (`gcd(q(B^k), W0(B^k)) = G_k * gcd(q(B), W0(B))` — the L-A2 law, general form). All kernel-3, 0 sorry, no user axioms, no native_decide; committed `#print axioms` at `experiments/ContentDescent_axioms.txt`. The unreduced modulus throughout. The structured half of the landscape is now kernel-certified end to end.
+
+---
+
 ## L-A5 — The adelic content invariant and the separation lemma (Merle, correspondence 2026-07-24)
 
 **Two keys (Merle: Lean kernel + independent scripts; Macindoe: clean-room re-derivation, 2026-07-25). Closing gloss restated per Macindoe offer (a) — adjacency separation, not the wall; `|q| > 1` domain per offer (b).**
