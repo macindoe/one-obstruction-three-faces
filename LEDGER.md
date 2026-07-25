@@ -314,3 +314,14 @@ Dividing the second by `(p+1)·log 2` is exactly `|log₂3 − K/(p+1)| < δ`, `
 `X` is a variable, so no numeral reaches a tactic; the final nonlinear step is supplied explicitly rather than left to `nlinarith`. The chain is now complete and general: `cycle_prod_identity → survivor_bound → seam_bound → log_gap_gen → quotient_is_convergent_gen`, plus `ceiling_upper`. **Eleven theorems, all kernel-3, 0 `sorry`, no `native_decide`, no user axioms**, each verified by its own probe; `LegendreApprox` (from the Merle Junction repository) compiles unchanged.
 
 Instantiating `X := 2⁷¹` gives the Barina window `n ≤ 3.5032·10¹⁰`. What remains for the full closure is only the finite discharge: the 22 convergent denominators inside that window, all of which fail the seam constraint (REQ-MATH-054/055, tightest by a factor 5.4).
+
+
+**Merle — T1's finite discharge proved; the window closes (2026-07-25, stack `5c9b663`).**
+
+> `discharge_all` : every convergent denominator of `log₂3` in the Barina window satisfies `2000·q·(q+q′) ≤ 2079·2⁷¹`, hence fails the seam criterion.
+
+Kernel `decide`, axioms **`[propext]` only**; `convPairs_length = 22` uses **no axioms at all**. The trick that made it cheap: instead of computing `θ_j` to twenty-odd digits, use the classical convergent bound `θ_j > 1/(q_j + q_{j+1})`, which turns the whole check into one **integer** inequality per convergent — no logarithm anywhere. Verified first (REQ-MATH-056): all 22 pass, tightest margin **5.17×** at `q = 6586818670` (the exact test gives 5.44×, so the integer form is conservative by design), with a non-vacuity canary showing the criterion **fails** at the next convergent — which is precisely why the window ends where it does.
+
+**T1's status, stated exactly.** Kernel-proved: the ceiling (`K` pinned), the whole seam chain, the logarithmic gap, the Legendre step (`n` must be a convergent denominator), and the finite discharge (each listed denominator fails). **Thirteen theorems, 0 `sorry`, no `native_decide`, no user axioms**, all four verification checks clean. The remaining glue is two standard continued-fraction facts, named rather than hidden: that `convPairs` is exactly the list of convergent denominators in the window, and the classical bound `θ_j > 1/(q_j+q_{j+1})` that links the integer criterion to the seam constraint. Both are textbook; neither is in Mathlib in directly usable form.
+
+**The statement this closes on:** *no positive cycle with `x_min ≥ 2⁷¹` and length `n ≤ 3.5032·10¹⁰`* — verified exactly throughout, and formalized except for the two named continued-fraction facts.
