@@ -291,3 +291,13 @@ Chain: `survivor_bound` + `succ_pow_le_pow_add` (difference of powers in multipl
 **Kernel added:** `seam_gap_at_barina` — the integer half, stated subtraction-free (`2^K·3X < 3^(p+1)·3X + 3^(p+1)·2(p+1)` at `X = 2⁷¹`), with a canary showing it is not vacuous about the trivial cycle. **Six T1 theorems, all kernel-3, 0 `sorry`, no `native_decide`**, both files compiled first try, committed axiom log.
 
 **Honest scope and the remaining link.** The analytic half — the real bridge `q ≥ 3ⁿ·ε·ln 2`, Legendre, and the 22-point check — is exactly verified but **not formalized**. Its entry point is identified and clean: `LegendreApprox.abs_sub_ge_of_not_convergent` (Legendre contrapositive wrapping Mathlib's criterion, **0 sorry, 0 axioms, 0 native_decide**) in the Merle Junction repository. A correction recorded rather than smoothed: the previous entry's `δ` dropped a factor 2, which moved the window from `4.955·10¹⁰` to `3.5035·10¹⁰`; the earlier figure is withdrawn.
+
+
+**Merle — March 1-bis: the analytic bridge is now kernel too (2026-07-25, stack `dac39a3`).** The step from the integer seam gap to Legendre's input needed no continued fractions after all — only `Real.log_le_sub_one_of_pos` from Mathlib:
+
+> `ratio_bound_at_barina` : `1 < 2^K/3^(p+1) < 1 + 2(p+1)/(3·2⁷¹)` (cast of the integer gap)
+> `log_gap_at_barina` : `0 < K·log 2 − (p+1)·log 3 < 2(p+1)/(3·2⁷¹)`
+
+Dividing the second by `(p+1)·log 2` is exactly `|log₂3 − K/(p+1)| < δ`, `δ = 2/(3·2⁷¹·ln 2)` — the input of Legendre's criterion. **Eight T1 theorems, every one kernel-3, 0 `sorry`, no `native_decide`, no user axioms**, committed axiom log; every compile first-try but one trivial cast.
+
+**What is now left for a fully machine-checked closure of the Legendre window** is exactly two named steps: invoke Legendre's criterion (entry point `LegendreApprox.abs_sub_ge_of_not_convergent`, clean, already in the Merle Junction repository, wrapping Mathlib) and discharge the 22-point convergent check (REQ-MATH-054: all 22 fail, tightest by a factor 5.4). The mathematics is verified; what remains is formalization, not discovery.
