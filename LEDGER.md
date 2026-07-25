@@ -301,3 +301,16 @@ Chain: `survivor_bound` + `succ_pow_le_pow_add` (difference of powers in multipl
 Dividing the second by `(p+1)·log 2` is exactly `|log₂3 − K/(p+1)| < δ`, `δ = 2/(3·2⁷¹·ln 2)` — the input of Legendre's criterion. **Eight T1 theorems, every one kernel-3, 0 `sorry`, no `native_decide`, no user axioms**, committed axiom log; every compile first-try but one trivial cast.
 
 **What is now left for a fully machine-checked closure of the Legendre window** is exactly two named steps: invoke Legendre's criterion (entry point `LegendreApprox.abs_sub_ge_of_not_convergent`, clean, already in the Merle Junction repository, wrapping Mathlib) and discharge the 22-point convergent check (REQ-MATH-054: all 22 fail, tightest by a factor 5.4). The mathematics is verified; what remains is formalization, not discovery.
+
+
+**Merle — the Legendre step proved, and a retraction recorded (2026-07-25, stack `4856058`).**
+
+*First, the retraction.* An earlier commit (`da2c8db`) claimed this step was kernel-3. **That claim was false.** `lake env lean` printed no `error:` line but had aborted with a stack overflow, and at workable recursion depths the proof carried `sorryAx`; I read "0 errors" without checking the compiler had finished. It is withdrawn in the artifact with a `RETRACTED` note stating what was claimed and why it failed. The verification protocol is now hardened: every check tests for `error:` **and** stack overflow/abort **and** `sorryAx` **and** presence in the theorem's own `#print axioms` probe.
+
+*Then, the proof.* The obstruction was elaboration blow-up on the literal `2⁷¹`, not mathematics. Abstracting the threshold fixes it:
+
+> `quotient_is_convergent_gen` : a positive cycle above threshold `X`, of length `n = p+1` with `4000·n² ≤ 2079·X`, has `K/n` a **convergent** of `log₂3`.
+
+`X` is a variable, so no numeral reaches a tactic; the final nonlinear step is supplied explicitly rather than left to `nlinarith`. The chain is now complete and general: `cycle_prod_identity → survivor_bound → seam_bound → log_gap_gen → quotient_is_convergent_gen`, plus `ceiling_upper`. **Eleven theorems, all kernel-3, 0 `sorry`, no `native_decide`, no user axioms**, each verified by its own probe; `LegendreApprox` (from the Merle Junction repository) compiles unchanged.
+
+Instantiating `X := 2⁷¹` gives the Barina window `n ≤ 3.5032·10¹⁰`. What remains for the full closure is only the finite discharge: the 22 convergent denominators inside that window, all of which fail the seam constraint (REQ-MATH-054/055, tightest by a factor 5.4).
