@@ -258,3 +258,20 @@ Chain, all in ℕ, no real analysis anywhere: `deficit_term_le` (one summand of 
 **Honest, and it matters for this entry's numbers.** What is *proved* is the inequality with the rational constant `1/13 = 0.0769231`, about 3% below the asymptotic `c_gen = 0.0793186`; `c_gen` itself remains an asymptotic value, not a Lean theorem. Recomputing this entry's thresholds under the **proved** constant (REQ-MATH-043, same Rhin exponent): per-scale crossing `1596 → 1655`, cumulative-tail crossing `1661 → 1722`. The qualitative statement is unchanged — the ticket mass is effectively finite at every scale, and now the margin step is no longer conditional. The remaining ingredient of this entry is therefore only the published Diophantine input (Rhin 1987 / Simons–de Weger 2005), not an unproved lemma of ours.
 
 The Macindoe offer to write this proof independently stands and is still welcome: two proofs of the same inequality — one entropic, one elementary — is the currency this ledger runs on, and the entropic route (with the Stirling caution recorded above) is the one that connects to the published Junction-Theorem form.
+
+
+---
+
+## L-A8 — T1, the no-hair theorem for cycles: the ceiling half at the kernel (Merle, correspondence 2026-07-25)
+
+**DRAFT — one key (Merle: Lean kernel + scripts); Macindoe key invited.**
+
+T1 is the structure theorem the joint note's §6 names as the program's next step: *every surviving positive cycle is forced into a rigid shape* — no freedom, like a black hole's no-hair theorem. Its **ceiling half is now a kernel theorem**, stated in pure integers with no logarithm:
+
+> `ceiling_upper` : a positive cycle with `p+1` odd elements, all `≥ X`, with `2(p+1) < 3X`, has `3^(p+1) < 2^K < 2·3^(p+1)` — i.e. `K = ⌈(p+1)·log₂3⌉` is forced.
+
+Chain: the **cycle product identity** `∏(3xᵢ+1) = 2^K·∏xᵢ` (telescoping over the rotation, `Fintype.prod_equiv`); the **survivor bound** `2^K(3X)^{p+1} ≤ 3^{p+1}(3X+1)^{p+1}` (per-factor `(3x+1)(3X) ≤ 3x(3X+1) ⟺ X ≤ x`); and the elementary strict two-bound `(m+1)^n < 2m^n` for `2n < m` (induction, no analysis). [`OneObstruction/T1Structure.lean`](https://github.com/ericmerle3789/one-obstruction-three-faces-lean/blob/41fa4f8/OneObstruction/T1Structure.lean), **kernel-3, 0 sorry, no user axioms, no `native_decide`**, committed axiom log; canaries instantiate the theorems on the trivial cycle.
+
+Machine chain first (REQ-MATH-052, committed): the product identity holds **exactly on all four real cycles, both shores** (`−17`: `∏(3x+1) = −403123745024000 = 2^11·∏x`); the Legendre window is `4.955·10^10` (below Hercher's `1.375·10^11`, so the surviving range is governed by the Ostrowski regime, not Legendre — stated honestly); and the **grid half** is script-verified: the Ostrowski expansion of every `ε`-small `n` uses **only large convergent denominators** (median lowest denominator 15601, against 1 for controls; e.g. `14936 = 22·665 + 306`, the coefficient 22 being the partial quotient 23 − 1). The grid half — `n` forced onto the convergent sub-grid — is measured and stated, **not yet proved**; it is the remaining half of T1.
+
+**Honest scope:** the ceiling half needs only `x_min > 2(p+1)/3` — far weaker than verification bounds — and pins `K` for every surviving scale. It does not by itself exclude anything; it removes one degree of freedom (K) of the two (K, shape), which is exactly what a no-hair theorem does. Open for co-editing.
