@@ -16,6 +16,8 @@ Each side's verification stack lives in its own repository and is never merged i
 
 `LEDGER.md`, one entry per numbered claim: statement, status (`proposed` / `one key` / `two keys` / `refuted` / `corrected`), and the verification artifact per side (commit-pinned link, script name, what it checks). Refuted and corrected entries are kept, with what refuted them — on both sides, deletions are not how errors are handled.
 
+**The regime column (Merle's proposal, round 12 §4(d); accepted by the author, second key = this pull request's approving review).** Beside the two keys, each entry records the regime it was discharged in; any claim asserting an equality additionally records a second regime chosen against it. Two round-12 errors — one on each side, in the same L-A8 block — were made and caught in exactly the regime the correspondence works in (Barina's threshold, the `2⁷¹` window, `q₂₁` through `q₂₃`), and would have passed both keys had the regime not changed; this column is the guardrail against exactly that.
+
 ## 4. Corrections
 
 Disagreements between the stacks are recorded precisely, then resolved by computation, and the resolution names which side's record needed correcting (precedent: the p = 22 exchange corrected one claim on each side; ledger entry L1).
