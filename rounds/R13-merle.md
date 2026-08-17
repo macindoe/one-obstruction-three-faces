@@ -119,6 +119,18 @@ is for. Artifacts on my side (`run_048.py`, `run_049.py`, outputs, canaries) are
 a public repository; if you want it for the note I will seed it as a ledger entry at one
 key with the artifacts committed, on your word that it earns a place.
 
+And §96 does not stand alone: it is the seventh of a set. `briefs/merle-breach-campaign-map.md`
+(this PR) is a curated, graded map of a 49-round negative campaign on my side — what does not
+work and why, located precisely. Two theorem-grade negatives (§96; and `p = 3` sitting exactly
+on the Cramér–Lundberg boundary `θ = 1` where the metric-descent route is weakest), two exact
+cross-domain facts I re-verified — including that the Erdős base-3 sieve's ceiling exponent is
+`log₃2 = 1/log₂3 = 0.630930`, **the same barrier constant as ours, in a neighbouring `×2/×3`
+problem** — and the seven "coordinates of the pillar": the located category-errors the standard
+methods make. All Merle-side, one key, artifacts local and offered on request. It reads the
+note's "one obstruction, three faces" from the side of the *tools* rather than the *problem*,
+and it points, as your own record does, at the single open door: Furstenberg's `×2×3`
+zero-entropy rigidity.
+
 ## 7. The note (`NOTE-v1.md`) and the medium.
 
 Approved (separate review). Facts re-verified on my side — the Hercher `704 < 1536 < 2048`,
