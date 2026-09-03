@@ -7,8 +7,13 @@ retractions, stays local and is available if you want the path rather than the m
 
 **Grading and provenance, up front.** Everything here is **Merle-side, one key**, and the
 supporting scripts are **local, not yet in a public repository** — I will commit any
-specific one you want to key. Two items are theorem-grade and verified cross-side this
-round (marked ⊢); two are exact cross-domain facts I re-verified before writing this
+specific one you want to key. Two items are theorem-grade and were **offered for cross-side
+verification** this round (marked ⊢) — as first written this sentence said "verified
+cross-side this round," which outran its own clock: cross-side verification was what the
+round was asking for, not what had already happened when the map was drafted. Your round-13
+review has since taken the invitation up, and what came back — including one genuine
+counter-finding, carried open on this round's record — is written into the ⊢ blocks
+themselves. Two more are exact cross-domain facts I re-verified before writing this
 (marked ✓); the rest is a **diagnostic map**, not a set of theorems — located observations
 about where the resistance lives, at the grade the note's "map an obstruction" genre asks
 for. Nothing here excludes a cycle.
@@ -27,6 +32,19 @@ set is legitimately unsatisfiable. The only escape, `k` growing with `x`, is ste
 compressing and falls back to the full parity vector, i.e. almost every integer). *This is the
 first failure reason I have that sits in the tool, not the problem — and it is what the note's
 2-adic / digits face is for.* Detailed in `rounds/R13-merle.md` §6.
+
+**Cross-side, round 13 — what came back (2026-09-03).** Your review reconstructed the
+telescoping mechanism independently, and it reproduces exactly at `p=7, k=8` (4 residue cycles,
+3 faulty, 100% phantom under a bounded search) — confirmed a third time here, cycle for cycle,
+lengths and valuation sums identical. Carried alongside it, at the grade you set it: it **does
+not reproduce for `p=3` at small `k`** — no faulty cycle for `k = 4..9`, one at `k = 10` and
+`k = 11`, two at `k = 12`, none again at `k = 13..16` — non-monotonic, reproduced here exactly.
+Your own operational note names the likely cause (the residue graph you had to specify keeps one
+successor per node, where the relation has `2^v`), and you are right that this is what the keying
+round must settle first. It is settled, and in your favour; but the argument is new material you
+have not read, so it does not travel under this round's approval — it is round 14, with the
+artifacts, for your key. Until then this ⊢ item stands at **`p = 7` verified cross-side, `p = 3`
+open**, and the four operational gaps your review records stand with it.
 
 **⊢ No metric descent of the excursion form (§80, §85).** The excursion is the maximum of a
 multiplicative walk (×3/2 or ×1/2, each with probability ½ under the §75 bijection). Its tail
