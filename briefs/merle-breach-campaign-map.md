@@ -22,29 +22,48 @@ for. Nothing here excludes a cycle.
 
 ## Two hard negatives (theorem-grade)
 
-**⊢ Finiteness of the quotient (§96).** No multiplicative altitude `V(x) = x·f(x mod 2^k)`,
-for any *fixed* `k`, can strictly decrease under the accelerated map on all integers — and
-the reason is not Collatz, it is that `ℤ/2^k` carries residue cycles `ℤ` does not. `g = log f`
-telescopes to 0 around every residue cycle, forcing `Σ(log3 − v·log2) < 0` there, but the
-finite quotient has cycles with `Σ ≥ 0` ("phantoms", 100% of the faulty cycles at `p=7,k=8`),
-each edge realised by a real integer (20,000 random edges, all realised) — so the constraint
-set is legitimately unsatisfiable. The only escape, `k` growing with `x`, is sterile (it stops
-compressing and falls back to the full parity vector, i.e. almost every integer). *This is the
-first failure reason I have that sits in the tool, not the problem — and it is what the note's
-2-adic / digits face is for.* Detailed in `rounds/R13-merle.md` §6.
+**⊢ Finiteness of the quotient (§95–§96).** No multiplicative altitude `V(x) = x·f(x mod 2^k)`,
+for any *fixed* `k`, can strictly decrease on the positive integers under the Terras half map
+`T` — and the reason is not Collatz, it is that a finite window on the last `k` bits cannot see
+the sign. **Two lines, one integer comparison.** Since `p − 2` is odd, set
+`r_p = −(p−2)^{−1} mod 2^{k+1}` and `u_p = r_p mod 2^k`; `r_p` is odd, so for every positive
+`x ≡ r_p (mod 2^{k+1})` we get `x ≡ T(x) ≡ u_p (mod 2^k)` with `T(x) > x` whenever `p > 2`.
+The two points carry the *same* `f`, so `V(T(x)) > V(x)`. For `p = 3`: `u_p = 2^k − 1`, and
+`511 → 767` at `k = 8`, both `≡ 255 (mod 256)`. `ℤ/2^k` does not distinguish `2^k − 1` from
+`−1`, and `−1` is a genuine fixed point of `3x+1` — the quotient inherits, as a loop, the
+shadow of a real fixed point living where the altitude is not defined. The only escape, `k`
+growing with `x`, is sterile — it stops compressing and falls back to the full parity vector,
+i.e. almost every integer — and that last clause is prose, not an artifact. *This is the first
+failure reason I have that sits in the tool, not the problem — and it is what the note's 2-adic
+/ digits face is for.* Full entry, artifacts and scope: `LEDGER.md` **L-A10**.
+
+> **Withdrawn (2026-09-03).** This paragraph previously ran the argument through a census of
+> "phantom" residue cycles and quoted *"100 % of the faulty cycles at `p = 7, k = 8`"*. **That
+> figure is withdrawn, not corrected**: re-running its artifact for the round-14 delivery showed
+> the script halts on its own canary and had never produced the census at all, that the census is
+> wrong again once the halting bug is fixed, and that the file never tests `p = 7`. It also said
+> "the accelerated map", which is not the map §96 works on. Nothing in the conclusion depended on
+> any of it — the standing run's own argument is that phantom-ness is *beside the point*, since
+> every edge is realised by real integers (20,000 checked). Kept visible rather than deleted, and
+> detailed in L-A10.
 
 **Cross-side, round 13 — what came back (2026-09-03).** Your review reconstructed the
-telescoping mechanism independently, and it reproduces exactly at `p=7, k=8` (4 residue cycles,
-3 faulty, 100% phantom under a bounded search) — confirmed a third time here, cycle for cycle,
-lengths and valuation sums identical. Carried alongside it, at the grade you set it: it **does
+telescoping mechanism independently, and it reproduces exactly at `p=7, k=8`: 4 residue cycles,
+3 faulty, at `(L,K) = (3,4), (4,8), (31,67)` — **that** much confirmed a third time here, cycle
+for cycle, lengths and valuation sums identical. Your accompanying bounded search found those
+three faulty cycles to be 100% phantom; **that figure is yours, on your object, and this side has
+not reproduced it** — it should not be read as related to the withdrawn census above, which was
+mine, on a different graph, and never computed at all. Carried alongside it, at the grade you set
+it: your reconstruction **does
 not reproduce for `p=3` at small `k`** — no faulty cycle for `k = 4..9`, one at `k = 10` and
 `k = 11`, two at `k = 12`, none again at `k = 13..16` — non-monotonic, reproduced here exactly.
 Your own operational note names the likely cause (the residue graph you had to specify keeps one
 successor per node, where the relation has `2^v`), and you are right that this is what the keying
-round must settle first. It is settled, and in your favour; but the argument is new material you
-have not read, so it does not travel under this round's approval — it is round 14, with the
-artifacts, for your key. Until then this ⊢ item stands at **`p = 7` verified cross-side, `p = 3`
-open**, and the four operational gaps your review records stand with it.
+round must settle first. **Settled in round 14, and in your favour**: your figures reproduce
+exactly on your object, and the cause is the one your own note named — the accelerated map with
+a single canonical successor keeps the `m = 0` branch, and the witness edge lives on the other
+one. Your measurement was right; the object was not ours. The resolution, the artifacts and the
+two retractions it forced are in `LEDGER.md` **L-A10**, seeded at one key for yours.
 
 **⊢ No metric descent of the excursion form (§80, §85).** The excursion is the maximum of a
 multiplicative walk (×3/2 or ×1/2, each with probability ½ under the §75 bijection). Its tail
