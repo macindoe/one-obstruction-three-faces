@@ -479,3 +479,41 @@ Offers, inside the entry per the co-edit style — his prose untouched, acceptan
 
 Artifact: `macindoe/collatz` `experiments/merle_la9_check.py` with committed output (commit `913f577`, on public `main`; 50 checks, 0 failures).
 
+
+---
+
+## L-A10 — No finite-quotient altitude decreases: the ascending fixed point (Merle, §95–§96, correspondence 2026-09-03)
+
+**Seeded at one key with artifacts committed, per your round-13 review** ("seed it as a ledger entry with the artifacts committed, we key it, and it enters v2 at two keys like everything else there"). Your `p = 3` question is what forced the entry into this shape, and it is the reason the entry is better than the offer was.
+
+**Claim.** Let `p ≥ 3` be odd and let `T` be the Terras half map — `T(x) = x/2` for `x` even, `T(x) = (px+1)/2` for `x` odd. Then for every fixed `k ≥ 1` and **every** function `f : ℤ/2^k → ℝ_{>0}`, the multiplicative altitude `V(x) = x · f(x mod 2^k)` fails to satisfy `V(T(x)) < V(x)` on all positive integers. No compression of `x` to its last `k` bits can carry a descent certificate.
+
+**Proof, in full.** Since `p − 2` is odd it is invertible mod `2^{k+1}`; put
+
+> `r_p = −(p−2)^{−1} mod 2^{k+1}`  and  `u_p = r_p mod 2^k`.
+
+`r_p` is odd (the inverse of an odd number is odd, and `2^{k+1} − odd` is odd), so the ascending branch applies, and by construction `(p·r_p + 1)/2 ≡ u_p (mod 2^k)`. Now take **any** positive integer `x ≡ r_p (mod 2^{k+1})`. Writing `x = r_p + m·2^{k+1}`, we get `(px+1)/2 = (p·r_p+1)/2 + pm·2^k`, so
+
+> `x ≡ u_p (mod 2^k)`,  `T(x) ≡ u_p (mod 2^k)`,  and  `T(x) − x = ((p−2)x + 1)/2 > 0`.
+
+The two points therefore carry **the same** value of `f`, and `V(T(x)) = T(x)·f(u_p) > x·f(u_p) = V(x)`. ∎
+
+**What this costs: nothing.** One integer comparison, `p > 2`. No Bellman–Ford, no linear program, no cycle enumeration, no phantom census, no floating point anywhere. For `p = 3` the witness is the plainest object in the problem: `u_p = 2^k − 1`, and the smallest positive witness at `k = 8` is `x = 511 → T(x) = 767`, both `≡ 255 (mod 256)`.
+
+**Provenance, stated exactly.** Nothing in the mathematics above is new to this round. The loop is **§95**'s — the fixed point of the ascending branch, `x = −1/(p−2)`, present for every odd `p` (25 cases). That the constraint is legitimate *whether or not integers close a cycle* is **§96**'s, established in `run_049` P1 (20,000 edges, all realised). This round contributes only the observation that those two results already suffice **on their own, in two lines**, and the exact-integer instrument that shows it.
+
+**Why `ℤ/2^k` cannot see it.** `ℤ/2^k` does not distinguish `2^k − 1` from `−1`, and `−1` is a genuine fixed point of `3x+1`. The finite quotient inherits, as a loop, the shadow of a real fixed point living on the part of `ℤ` where the altitude is not defined. This is the "one obstruction" seen from the digits face: not an accident of the modulus, but the price of forgetting the sign.
+
+**One formulation retracted, ours, before you have to catch it.** The trajectory does **not** stay in its residue class: `511 → 767 → 1151`, and `1151 ≡ 127 (mod 256)` — it leaves at step 2. The lift of `767` in `ℤ/2^{k+1}` is `255`, not `511`, so the next step takes the other branch. Any wording of this entry that says the witness "climbs forever inside one class" is false and is withdrawn. **One step is all the argument ever needed**, which is precisely §96's point restated: the constraint is on the *edge*, never on a closed trajectory — so the phantom/real question does not even arise here.
+
+**Your `p = 3` non-reproduction, resolved — and you had already named the cause.** Your reconstruction measured the **accelerated** map `x → (px+1)/2^v` on odd residues with **one canonical successor** per node. Ours is the Terras half map carrying **both lifts** from `ℤ/2^{k+1}` (`run_049` line 33) — the relation has `2^v` successors and yours keeps the `m = 0` branch. Verified both ways in `run_050` P4: your figures reproduce exactly on your object (`p=3`: none at `k=4..9`, one at `k=10`, one at `k=11`, two at `k=12`, none at `k=13..16`; `p=7,k=8`: three, at `(L,K) = (3,4), (4,8), (31,67)`), **and the witness edge `u → u` is absent from it** — at `p=3, k=8` your map sends `255` to `127`. Your operational note 1 identified this exactly; the measurement was right and the object was not ours. Your other three operational gaps — the tautological edge-realizability check, the choice of "phantom" criterion, and the bounded search — are recorded as **moot for this entry rather than answered**: the two-line argument needs no cycle, so it never asks whether one closes.
+
+**Two retractions carried into this entry, neither touching the claim.**
+- **The phantom census is withdrawn in full**, including the figure *"100 % of the faulty residue cycles are phantoms at `p = 7, k = 8`"* quoted in `rounds/R13-merle.md` §6 and in `briefs/merle-breach-campaign-map.md`. Re-running `run_048.py` for this delivery found that **it does not run**: its own canary C3 fires and halts it (its `rationnel` walks the word backwards where `run_049`'s walks it forwards), so its P3/P4/P5 were never produced. With that one-word bug fixed it then fails its **own** control P5, emitting `x = −6`, which lies on no cycle — it solves the word's linear equation without checking that the trajectory's parities follow the word. The file never tests `p = 7` at all. The figure is **withdrawn, not corrected**, and `run_048.py` is committed exactly as written with a retraction header and nothing removed. This is offer g's pattern turned on ourselves: a sentence in this correspondence that had no working artifact behind it.
+- What survives is the entire result: `run_049` is sound, and its argument never needed the census.
+
+**Honest scope.** This closes the family `V = x·f(x mod 2^k)` at *fixed* `k`. **It excludes no cycle**, and nothing here is formalised in Lean. The one escape — `k` growing with `x` — is argued sterile in prose (it stops compressing and falls back to the full parity vector, §75) and that argument is **not** verified in the artifacts; it is offered as prose, at that grade. `p = 1` is carried as a negative control (`run_050` P6): there `T` descends, the constraint is satisfiable, and the argument correctly declines to conclude — it does not prove too much.
+
+**Artifacts — Merle:** `ericmerle3789/one-obstruction-three-faces-lean` at commit `db0e89d`: `experiments/run_050.py` (the exact reprise — 14 checks, 0 failures, integer arithmetic throughout: 4000 `(p,k)` pairs `p = 3..201` odd, `k = 1..40`; 2880 positive witnesses; the divergence diagnosis; the negative control) with `run_050_output.txt`; `experiments/run_049.py` and its output (the standing §96 run, P1's 20,000 edges); `experiments/run_048.py` and its output, committed **with its canary firing**, as the record of the retraction.
+
+**Key status: one key (Merle).** Yours is invited on this entry as you proposed. Placement in the note, as you set it: the principle in one sentence in the body's 2-adic paragraph, the theorem itself in the marked apparatus section.
