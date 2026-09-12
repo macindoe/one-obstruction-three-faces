@@ -145,10 +145,40 @@ where the real obstruction sits (7), and the effective tools reach only the bala
     The first candidate second witness that exists is the `F₂[x]` fact above — and it witnesses the
     diagnosis, not the theorem.
 
+## The reading for a second witness (2026-09-12) — what exists, and what it reaches
+
+Under §175's criterion — a theorem that already exists, reached by a route that does not speak our
+words, and able to collide with our description of a cycle — six languages were read at source
+(logic and automata, S-unit equations, `×2×3` rigidity, `p`-adic methods, Mahler's `Z`-numbers,
+combinatorics on words). **No second witness for the theorem. Half of one for a single word.
+Three more for the diagnosis.**
+
+- **Half a witness, and it lands on L-A11.** Knight, *Discrete Math.* 349 (2025) 114812: the cycle
+  whose parity vector is the upper Christoffel word — the circularly balanced word — is never
+  integral, by the reversal symmetry of Christoffel words, with no Baker input. With L-A2 reducing
+  non-coprime `(S, k)` to the coprime case, **the balanced cycle is excluded at every length**, by a
+  tool that is not ours. Foreign tool, our object; reach: circular words whose reverse is a
+  rotation. Details and measurements in L-A11.
+- **Logic.** Cobham (1969)–Semënov (1977): a set definable in base 2 *and* base 3 is semilinear.
+  A January-2026 preprint (Dhiman–Pandey, arXiv 2601.12772 v2) shows the `k`-step transition
+  relation of generalised Collatz, with `k` carried as `2^k`, is not definable in base-2 Büchi
+  arithmetic — because it would define `{3^k}`; **its witness is our L-A10 residue**:
+  `T^k(2^k·m − 1) = 3^k·m − 1` (checked, `run_124` P7). The `×2×3` obstruction, said in logic.
+- **Computation.** Stérin–Woods (RP 2020, arXiv 2007.06979): the Collatz process *is* a
+  base-3-to-base-2 converter; the cyclic conjecture is encoded there as a reachability problem;
+  predicting half the bits of `T^i(x)` is in `NC¹` outside `AC⁰`.
+- **The bridge that exists between words and the 2-adic face.** López–Stoll, *Integers* 13 (2013):
+  the 2-adic conjugacy image `Φ(v)` of a Sturmian word, computed as a generalised continued
+  fraction; aperiodic `v` with eventually periodic `Φ(v)` remains unknown.
+- **Not found**, stated so the next reader does not repeat it: no S-unit / subspace-theorem
+  treatment of Collatz cycles; no Skolem–Mahler–Lech; no Ostrowski numeration in the Collatz
+  literature (L-A8's grid seems to have no antecedent); Mahler's `Z`-numbers are a cousin
+  (the `×3/2` map without halving), not a witness.
+
 ## The one door that stayed open
 
 Across the whole campaign — and, from your record, across yours — exactly one native-infinity
 instrument is neither closed nor blind: **Furstenberg's `×2×3` zero-entropy measure rigidity**
 (open since 1967; Rudolph–Johnson 1990 needs positive entropy, which is exactly what this
 problem lacks). It is `aeh.md` 13.6.7's "one missing genre of theorem", seen from the ergodic
-side. Neither of us has the tool. If there is a next front, it is there.
+side. Neither of us has the tool. If there is a next front, it is there. One precision from the reading: Furstenberg's *intersection* conjecture in the same family **is proved** — Shmerkin, *Ann. of Math.* 189 (2019) 319–391, and Wu, *Ann. of Math.* 189 (2019) 707–751: for `A` closed `×p`-invariant and `B` closed `×q`-invariant, `log p/log q ∉ ℚ`, `dim_H((uA+v) ∩ B) ≤ max(0, dim A + dim B − 1)` — a rigidity theorem that exists, in the right family, with **no known bridge** to a cycle. The zero-entropy *measure* rigidity is the part still open, and it is the part a cycle would need.

@@ -63,4 +63,21 @@ wiki cite, at `db0e89d`). Locally it had overwritten a *different* script of my 
 the number; the original is recovered and restored byte-identical, and `NAMING-run_050.md` sits
 beside it so no reader is misled. No content changed on either side.
 
+## 8. Addendum, same day, before your review: the balanced cycle is already excluded.
+
+You asked, in effect, for a second witness in round 13's closing lines; I went to read for one.
+The one that exists and bites is **Knight, *Discrete Math.* 349 (2025) 114812**: the cycle whose
+parity vector is the upper Christoffel word — the balanced word, Steiner's mirror image — is never
+integral, by the reversal symmetry of Christoffel words, with no Baker input. I re-verified it by
+brute force on all 518 coprime `(S, k)` with `k ≤ 60`, and checked how it meets L-A11: our Sturmian
+word is his circularly for some `k` and not others (measured, listed in the entry), `R` is linear on
+his word too (`≥ k/4` exactly, `≥ k/2` measured to `k = 300`), and **your L-A2 reduces every
+non-coprime length to his case** — so the balanced cycle is gone at every `k`, by a tool that is
+not ours. Half a second witness: foreign tool, our object. The entry is amended accordingly, and
+two of my own canaries fired while checking it — a wrong test, then a wrong prediction (the exact
+constant `1/(2 ln 2)` holds only for the irrational-slope word) — both corrected in the open in
+`run_124.py`. The map carries the rest of the reading: Cobham–Semënov in logic (with our L-A10
+residue as the witness), Stérin–Woods's base converter, and the fact that Furstenberg's
+*intersection* conjecture is proved (Shmerkin, Wu, 2019) with no bridge to a cycle.
+
 The problem has waited eighty-nine years; the map has one more room in it, and still no door.
