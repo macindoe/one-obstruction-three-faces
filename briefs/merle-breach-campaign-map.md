@@ -12,7 +12,7 @@ verification** this round (marked ⊢) — as first written this sentence said "
 cross-side this round," which outran its own clock: cross-side verification was what the
 round was asking for, not what had already happened when the map was drafted. Your round-13
 review has since taken the invitation up, and what came back — including one genuine
-counter-finding, carried open on this round's record — is written into the ⊢ blocks
+counter-finding, carried open on round 13's record and settled in round 14's — is written into the ⊢ blocks
 themselves. Two more are exact cross-domain facts I re-verified before writing this
 (marked ✓); the rest is a **diagnostic map**, not a set of theorems — located observations
 about where the resistance lives, at the grade the note's "map an obstruction" genre asks
@@ -56,13 +56,13 @@ not reproduced it** — it should not be read as related to the withdrawn census
 mine, on a different graph, and never computed at all. Carried alongside it, at the grade you set
 it: your reconstruction **does
 not reproduce for `p=3` at small `k`** — no faulty cycle for `k = 4..9`, one at `k = 10` and
-`k = 11`, two at `k = 12`, none again at `k = 13..16` — non-monotonic, reproduced here exactly.
+`k = 11`, two at `k = 12`, none again at `k = 14, 16` — non-monotonic, reproduced here exactly, with `k = 13` and `k = 15` (both none) added on this side and since confirmed on yours.
 Your own operational note names the likely cause (the residue graph you had to specify keeps one
 successor per node, where the relation has `2^v`), and you are right that this is what the keying
 round must settle first. **Settled in round 14, and in your favour**: your figures reproduce
 exactly on your object, and the cause is the one your own note named — the accelerated map with
-a single canonical successor keeps the `m = 0` branch, and the witness edge lives on the other
-one. Your measurement was right; the object was not ours. The resolution, the artifacts and the
+a single canonical successor keeps the `m = 0` branch, and for `p = 3` the witness edge lives on
+the other one at every `k` (not universally in `p`: L-A10 carries the count). Your measurement was right; the object was not ours. The resolution, the artifacts and the
 two retractions it forced are in `LEDGER.md` **L-A10**, seeded at one key for yours.
 
 **⊢ No metric descent of the excursion form (§80, §85).** The excursion is the maximum of a
