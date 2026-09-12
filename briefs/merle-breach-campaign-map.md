@@ -73,7 +73,7 @@ finite (tail `1/R`) at `p = 3`, infinite at `p = 5, 7`. `θ = 1` exactly, verifi
 (single-clock) descent certificate therefore lives exactly at the edge where it is weakest,
 which is why the metric route does not close.
 
-## Two exact cross-domain facts (verified this round)
+## Three exact cross-domain facts (verified this round, one added in round 15)
 
 **✓ The Erdős base-3 barrier is the Collatz barrier.** For every *odd* `n`, `2^n ≡ 2 (mod 3)`,
 so the last base-3 digit of `2^n` is 2 (never 0) and the Erdős base-3 conjecture holds in one
@@ -89,6 +89,21 @@ exactly at `x* = 7/3` (`(3+3/7)/(3−3/7) = 4/3`, `log₂(4/3) = 2 − log₂3`)
 odd positive integer above the crossover, i.e. the trivial cycle. (This is the corollary
 already in the L-A8 block — recorded here only because it is the archimedean-face anchor of
 the same map.)
+
+**✓ Over `F₂[x]`, Collatz is a theorem — and the reason names the obstruction (added 2026-09-12).**
+For the polynomial analogue `T(f) = f/x` if `x | f`, `((x+1)·f + 1)/x` otherwise, every `f ≠ 0`
+reaches `1`: Hicks–Mullen–Yucas–Zavislak, *Amer. Math. Monthly* 115 (2008) 615–622, stopping time
+`≤ deg(f)² + 2·deg(f)`; improved to `O(deg(f)^{1.5})` by Alon–Behajaina–Paran, arXiv 2401.03210
+(2024). Reproduced here exhaustively (`run_123` P4): maximal stopping times `9, 15, 21, 29, 35, 43,
+51` at degrees `4, 6, …, 16` — our journal had sampled `37, 39` for the last two; corrected. **The
+mechanism, stated exactly:** a rise adds *exactly one* to the degree and a fall removes one, so
+along an orbit the degree never exceeds its starting value — **the size face closes for free**, the
+orbit lives in a finite set, and the theorem is the finite check that no other cycle sits inside it.
+Over `ℤ` the rise adds `log₂3 = 1.58496…` bits: no finite box. *The polynomial world removes exactly
+one thing — the irrationality of `log₂3` — and the conjecture falls.* This is the second, external
+witness the campaign's §175 asked for, not for a theorem but for the diagnosis: REQ-067 on our
+side (`log₂3` is a generic irrational, nothing to extract) and a literature that never worked on
+our problem (1976→2025) say the same sentence.
 
 ## The diagnostic map — the seven located reasons the wall resists
 
@@ -108,10 +123,27 @@ a method makes*, located precisely:
 7. **Finiteness of the quotient (§96):** every finite model of `ℤ` inherits cycles `ℤ` does
    not — the ⊢ result above, seen as the seventh coordinate.
 
-Read together: the size/archimedean face is *balanced* (2, 3), the arithmetic/2-adic face is
+Read together: the size/archimedean face is *balanced* (2, 3, 8), the arithmetic/2-adic face is
 where the real obstruction sits (7), and the effective tools reach only the balanced face
-(4, 5, 6). This is the same "one obstruction, three faces" the note maps, from the side of the
+(4, 5, 6, 9); 10 says why one more tool of the same kind will not change the reading. This is the same "one obstruction, three faces" the note maps, from the side of the
 *tools* rather than the *problem*.
+
+8. **Absence, not barrier (§167):** what keeps `corrsum` off the residue `0` of `d = 2^S − 3^k` is
+   not a mechanism. Exhaustively at `k ≤ 15` (seam sum), the counts of residues follow Poisson(`C/d`)
+   to `0.1 %` (`k = 15`: `1,735,122 / 582,630 / 98,147 / 11,440 / 905 / 64` against Poisson
+   `1,734,412 / 583,676 / 98,211 / 11,017 / 927 / 62`), and the residue `0` is undistinguished —
+   millions of residues share its count. The same reading as L3's uniform normalized distance, now
+   over the whole word population at fixed `k`. A theorem of equidistribution here would prove the
+   *absence*, not a wall. (`run_120`, rerun exact 2026-09-12.)
+9. **The reach of exact structure (§169):** the repeated-word law retires `5.1·10⁻⁸` of the admissible
+   words at `k = 24` and none at half the lengths — exact, two-keyed, and not where cycles live
+   (L-A2 scope note, figures corrected before sending).
+10. **The second-witness criterion (§175) — the reading key of this map.** Every tool above speaks one
+    language (trajectory, gaps, powers of 2 and 3, `corrsum`); descriptions in one language never
+    contradict each other, and an exclusion needs two descriptions from disjoint routes that collide
+    (`√2`: ratio *and* parity; Fermat: Frey curve *and* modularity). Six instruments, one witness.
+    The first candidate second witness that exists is the `F₂[x]` fact above — and it witnesses the
+    diagnosis, not the theorem.
 
 ## The one door that stayed open
 

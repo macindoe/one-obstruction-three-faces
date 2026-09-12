@@ -75,6 +75,10 @@ For every profile `P = B^j` (`j ≥ 2`): `gcd(q_P, R_0(P)) = |q_P|/q_red(B)`, `q
 
 ---
 
+**Merle — measured reach of the law (2026-09-12, one key; round 15).** The law is exact and two-keyed; this note measures what it removes, so the entry is not read for more than it does. Among the admissible gap-words of length `k` at the seam sum `S = ⌈k·log₂3⌉` (the sum every large positive cycle is forced to; `C(S−1, k−1)` words), the words the law retires — `B^j`, `j > 1`, `j | gcd(k, S)` — number exactly **6 / 126 / 792 / 5,005 / 792** at `k = 6 / 12 / 16 / 20 / 24` (Möbius count over the common divisors), i.e. fractions `4.8·10⁻²`, `1.7·10⁻³`, `2.4·10⁻⁴`, `3.5·10⁻⁵`, **`5.1·10⁻⁸`** — and **exactly zero** at `k = 3, 4, 5, 7, 8, 11, 13, 14, 17`, where `gcd(k, S) = 1`. At `k = 24` the law retires five words in a hundred million; for half the lengths it retires none. Not a defect of the theorem — its object (repetition) is not where cycles live (primitive words). *Stated flat because our own first measurement of this (journal §169) had the `k = 20, 24` counts wrong — "≤ 51" and "≤ 67", bounds from a sample presented as counts — caught on re-derivation before it left our side.* Artifact: `ericmerle3789/one-obstruction-three-faces-lean` `experiments/run_123.py` P3 (commit `fcd35d1`).
+
+---
+
 ## L-A3 — The anchored loops, the spent `|q| = 1` stock, and the Benford side-asymmetry (Macindoe candidate, correspondence 2026-07-19)
 
 **DRAFT — for co-editing (Ben, 2026-07-19; per the round-5 correspondence).**
@@ -517,3 +521,23 @@ The two points therefore carry **the same** value of `f`, and `V(T(x)) = T(x)·f
 **Artifacts — Merle:** `ericmerle3789/one-obstruction-three-faces-lean` at commit `db0e89d`: `experiments/run_050.py` (the exact reprise — 14 checks, 0 failures, integer arithmetic throughout: 4000 `(p,k)` pairs `p = 3..201` odd, `k = 1..40`; 2880 positive witnesses; the divergence diagnosis; the negative control) with `run_050_output.txt`; `experiments/run_049.py` and its output (the standing §96 run, P1's 20,000 edges) — one line of it is platform-dependent and the entry does not rest on it: P3's count "V ne decroit PAS : 17002" is a float-tie count (on this side 14,466 strict rises plus 2,536 exact float ties; your side prints 15,396), the verdict and the counterexample being identical; `experiments/run_048.py` and its output, committed **with its canary firing**, as the record of the retraction.
 
 **Key status: one key (Merle).** Yours is invited on this entry as you proposed. Placement in the note, as you set it: the principle in one sentence in the body's 2-adic paragraph, the theorem itself in the marked apparatus section.
+
+---
+
+## L-A11 — The seam chain's pessimism is not removable: the Sturmian word (Merle, journal §178, correspondence 2026-09-12)
+
+**Claim.** In L-A8's seam chain — the identity `Σᵢ log₂(1 + 1/(3xᵢ)) = K − n·log₂3`, hence `ε := K − n·log₂3 ≤ R / (3·x_min·ln 2)` with **`R := Σᵢ x_min/xᵢ`**, then Legendre's `ε < 1/(2n)` — the one inequality that fixes the window at `√X` is the trivial **`R ≤ n`** (every element at least `x_min`). **No bound `R ≤ c·n^β` with `β < 1`, and no constant bound, holds over the admissible words**: the Sturmian word of `log₂3`,
+
+> `g_j = ⌈j·log₂3⌉ − ⌈(j−1)·log₂3⌉` (gaps in `{1, 2}`, sum `S = ⌈k·log₂3⌉` — the seam sum itself),
+
+is admissible at every length and carries **`R ≥ k/2`**, with **`R/k → 1/(2·ln 2) = 0.72135…`** exactly (the walk `u_j = j·log₂3 − ⌈j·log₂3⌉` stays in a band of height exactly 1 and equidistributes there, so every term `2^{u_min − u_j}` lies in `[½, 1]`). Measured: `R/k = 0.7540, 0.7202, 0.7215, 0.7215, 0.7214` at `k = 10, 10², 10³, 10⁴, 10⁵`. **Consequence:** the `√X` window of L-A8 cannot be widened beyond a factor `√2` by any sharpening of that inequality alone; the method's pessimism ("all elements as small as the smallest") is realised, to 28 %, by a word that exists at every length.
+
+**What it is and is not.** It is a statement about **candidate words**, in the large-`x_min` regime the chain works in — it neither constructs nor excludes a cycle with that word; it says the pessimism cannot be removed *a priori*. The word is the most regularly distributed one for the rotation by `log₂3`: what breaks the would-be lemma is not disorder, it is perfect order.
+
+**One identification corrected, ours, before it reached you.** Our journal first read this word as "precisely what the literature calls a circuit." **Inverted.** An `m`-circuit (Steiner 1977; Simons–de Weger 2005) has `m` blocks of rises; the Sturmian word has `⌈k·log₂3⌉ − k ≈ 0.585·k` of them — it is the *most fragmented* admissible word, not the least — and it lies outside every circuit theorem (Hercher 2023: `m ≤ 91`; the Sturmian word passes `91` blocks from `k = 156`). The negative control makes the right sentence: the **one-block** word (all `1`s then all `2`s) has `R` **bounded** (`≈ 6–7` while `k` grows `100×`), the Sturmian word has `R ≈ 0.72·k`. So the trivial bound `R ≤ n` is tight **exactly on the words the circuit theorems do not reach**, and loose exactly where they do. The two instruments have disjoint regimes; neither touches the balanced many-block word.
+
+**Provenance.** The counterexample and its mechanism are journal §178 (Merle, 2026-08-20); the exact constant `1/(2 ln 2)`, the circuit correction and the negative control are this round's. Nothing here excludes a cycle; nothing is formalised.
+
+**Artifacts — Merle:** `ericmerle3789/one-obstruction-three-faces-lean` at commit `fcd35d1`: `experiments/run_123.py` (P1, P2, P5; 30 checks total in the file, 0 failures; `mpmath` at 60 digits, integer comparisons for admissibility) with `run_123_output.txt`.
+
+**Key status: one key (Merle).** Yours invited; the construction is short enough to re-derive in an afternoon.
