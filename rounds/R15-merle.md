@@ -46,7 +46,9 @@ second witness — for the diagnosis, not for a theorem.
 ## 4. Two diagnostics for the map, and a scope note on L-A2.
 
 **§167, "absence, not barrier".** Exhaustively at `k ≤ 15`, the residue counts of `corrsum mod d`
-follow Poisson(`C/d`) to `0.1 %` and the residue `0` is undistinguished among millions. This is your
+follow Poisson(`C/d`) to `0.1 %` and the residue `0` is undistinguished among millions. *[Withdrawn on the
+round-15 audit, 2026-09-22: that `corrsum` was the suffix sum, not the cycle numerator; on the numerator the
+counts are not Poisson — see the map's diagnostic 8.]* This is your
 L3 uniform-distance reading again, over the whole word population at fixed `k`; it reproduces
 exactly on rerun. **§169, scope of the repeated-word law** (our two-key L-A2): it retires
 `5.1·10⁻⁸` of admissible words at `k = 24` and none at half the lengths. Third correction: my
