@@ -128,13 +128,26 @@ where the real obstruction sits (7), and the effective tools reach only the bala
 (4, 5, 6, 9); 10 says why one more tool of the same kind will not change the reading. This is the same "one obstruction, three faces" the note maps, from the side of the
 *tools* rather than the *problem*.
 
-8. **Absence, not barrier (§167):** what keeps `corrsum` off the residue `0` of `d = 2^S − 3^k` is
-   not a mechanism. Exhaustively at `k ≤ 15` (seam sum), the counts of residues follow Poisson(`C/d`)
-   to `0.1 %` (`k = 15`: `1,735,122 / 582,630 / 98,147 / 11,440 / 905 / 64` against Poisson
-   `1,734,412 / 583,676 / 98,211 / 11,017 / 927 / 62`), and the residue `0` is undistinguished —
-   millions of residues share its count. The same reading as L3's uniform normalized distance, now
-   over the whole word population at fixed `k`. A theorem of equidistribution here would prove the
-   *absence*, not a wall. (`run_120`, rerun exact 2026-09-12.)
+8. **Absence, not barrier (§167) — restated on the round-15 audit (2026-09-22).** For a gap word
+   `g = (g₀,…,g_{k−1})` with `S = Σg = ⌈k·log₂3⌉`, the cycle numerator is
+   `N(g) = Σ_j 3^{k−1−j}·2^{g₀+…+g_{j−1}}` (prefix sums), with `x₀·d = N(g)`, `d = 2^S − 3^k`, on every
+   integer cycle (checked on `1, −1, −5, −7, −17, −25, −41`). Over all `C = C(S−1, k−1)` words,
+   exhaustively at `k ≤ 15`: the residue `0` has count **exactly `0`** for `3 ≤ k ≤ 15` (as the machine
+   verification already implies), and the residue counts are **not** Poisson(`C/d`) — under-dispersed
+   from multiplicity `3` on (`k = 15`: `1,725,804 / 598,138 / 94,773 / 8,918 / 631 / 43` against
+   `1,734,412 / 583,676 / 98,211 / 11,017 / 927 / 62`, i.e. `−0.5 / +2.5 / −3.5 / −19 / −32 / −31 %`).
+   What survives of the diagnostic: `0` is one of the 71 % of residues with count `0` — undistinguished
+   in that weak sense only; the collisions `N(g) ≡ N(g′) (mod d)` are a structured event, measured and
+   not explained. (`run_125` P1–P3, published.)
+   > **Withdrawn (2026-09-22).** As first written this item read: *"the counts of residues follow
+   > Poisson(`C/d`) to `0.1 %` (`k = 15`: `1,735,122 / 582,630 / 98,147 / 11,440 / 905 / 64` against
+   > Poisson `1,734,412 / 583,676 / 98,211 / 11,017 / 927 / 62`), and the residue `0` is undistinguished
+   > — millions of residues share its count. … A theorem of equidistribution here would prove the
+   > absence, not a wall."* Those are the figures of `run_120`, whose `corrsum` takes **suffix** sums,
+   > `Σ_j 3^{k−1−j}·2^{g_{j+1}+…+g_{k−1}}` — not the cycle numerator: it is `≡ 0 (mod d)` at
+   > `k = 3, 4, 5, 8, 11` where no cycle exists, and misses the doubled trivial cycle `(2,2)`. The
+   > Poisson fit to `0.1 %` is a property of that other sum. Caught by the round-15 review's request for
+   > an operational definition; `run_120.py` stays published with this note beside it.
 9. **The reach of exact structure (§169):** the repeated-word law retires `5.1·10⁻⁸` of the admissible
    words at `k = 24` and none at half the lengths — exact, two-keyed, and not where cycles live
    (L-A2 scope note, figures corrected before sending).
@@ -167,7 +180,7 @@ Three more for the diagnosis.**
 - **Computation.** Stérin–Woods (RP 2020, arXiv 2007.06979): the Collatz process *is* a
   base-3-to-base-2 converter; the cyclic conjecture is encoded there as a reachability problem;
   predicting half the bits of `T^i(x)` is in `NC¹` outside `AC⁰`.
-- **The bridge that exists between words and the 2-adic face.** López–Stoll, *Integers* 9 (2009), #A13, 141–162:
+- **The bridge that exists between words and the 2-adic face.** López–Stoll, *Integers* 9 (2009) #A13, 141–162:
   the 2-adic conjugacy image `Φ(v)` of a Sturmian word, computed as a generalised continued
   fraction; aperiodic `v` with eventually periodic `Φ(v)` remains unknown.
 - **Not found**, stated so the next reader does not repeat it: no S-unit / subspace-theorem
