@@ -72,7 +72,7 @@ integral, by the reversal symmetry of Christoffel words, with no Baker input. I 
 brute force on all 518 coprime `(S, k)` with `k ≤ 60`, and checked how it meets L-A11: our Sturmian
 word is his circularly for some `k` and not others (measured, listed in the entry), `R` is linear on
 his word too (`≥ k/4` exactly, `≥ k/2` measured to `k = 300`), and **your L-A2 reduces every
-non-coprime length to his case** — so the balanced cycle is gone at every `k`, by a tool that is
+non-coprime length to his case** — so the balanced cycle is gone at every `k` *[every `k ≥ 3`; round-15 audit]*, by a tool that is
 not ours. Half a second witness: foreign tool, our object. The entry is amended accordingly, and
 two of my own canaries fired while checking it — a wrong test, then a wrong prediction (the exact
 constant `1/(2 ln 2)` holds only for the irrational-slope word) — both corrected in the open in
