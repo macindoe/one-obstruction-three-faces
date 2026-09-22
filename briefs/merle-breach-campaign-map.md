@@ -167,7 +167,7 @@ Three more for the diagnosis.**
 - **Computation.** Stérin–Woods (RP 2020, arXiv 2007.06979): the Collatz process *is* a
   base-3-to-base-2 converter; the cyclic conjecture is encoded there as a reachability problem;
   predicting half the bits of `T^i(x)` is in `NC¹` outside `AC⁰`.
-- **The bridge that exists between words and the 2-adic face.** López–Stoll, *Integers* 13 (2013):
+- **The bridge that exists between words and the 2-adic face.** López–Stoll, *Integers* 9 (2009), #A13, 141–162:
   the 2-adic conjugacy image `Φ(v)` of a Sturmian word, computed as a generalised continued
   fraction; aperiodic `v` with eventually periodic `Φ(v)` remains unknown.
 - **Not found**, stated so the next reader does not repeat it: no S-unit / subspace-theorem
