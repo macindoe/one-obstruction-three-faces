@@ -45,6 +45,18 @@ precisions) could not break it, and every figure was then redone by hand. The th
 unchanged. Fewer lemmas than the chain. I am attempting it; if it compiles and probes clean
 under the four-check protocol before you review, it lands on this branch as its own commit.
 
+## 4-bis. Landed, the same day.
+
+Written above as an attempt; it compiled. `log_gap_direct` (no two-bound, no `hpX`),
+`quotient_is_convergent_direct` (`hwin : 2000·(p+1)² ≤ 2079·X`) and `discharge_all_direct`
+(`1000·q(q+q′) ≤ 2079·2⁷¹` on the 22 pairs, by `decide`) are in `T1Structure.lean` at
+`acd7063`, under the hardened four-check protocol — 0 errors, 0 overflow, 0 `sorryAx`, 18
+declarations in the axiom log, the new three at kernel-3 and `[propext]`. Canaries pin the
+integral window to `n ≤ 49542405870` and place the old one strictly inside it. The grade of
+the block is therefore the grade L-A8's own chain has: kernel on the analytic chain, prose on
+the two continued-fraction facts and on the multiples glue. The withdrawn number is back as a
+theorem, with its withdrawal still on the page.
+
 ## 5. The rest is in the round-15 comment.
 
 The section-167 withdrawal, the `k ≥ 3` clause, the citation, and the grading question on your
