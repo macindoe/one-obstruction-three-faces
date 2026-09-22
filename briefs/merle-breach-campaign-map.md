@@ -73,7 +73,7 @@ finite (tail `1/R`) at `p = 3`, infinite at `p = 5, 7`. `θ = 1` exactly, verifi
 (single-clock) descent certificate therefore lives exactly at the edge where it is weakest,
 which is why the metric route does not close.
 
-## Two exact cross-domain facts (verified this round)
+## Three exact cross-domain facts (verified this round, one added in round 15)
 
 **✓ The Erdős base-3 barrier is the Collatz barrier.** For every *odd* `n`, `2^n ≡ 2 (mod 3)`,
 so the last base-3 digit of `2^n` is 2 (never 0) and the Erdős base-3 conjecture holds in one
@@ -89,6 +89,21 @@ exactly at `x* = 7/3` (`(3+3/7)/(3−3/7) = 4/3`, `log₂(4/3) = 2 − log₂3`)
 odd positive integer above the crossover, i.e. the trivial cycle. (This is the corollary
 already in the L-A8 block — recorded here only because it is the archimedean-face anchor of
 the same map.)
+
+**✓ Over `F₂[x]`, Collatz is a theorem — and the reason names the obstruction (added 2026-09-12).**
+For the polynomial analogue `T(f) = f/x` if `x | f`, `((x+1)·f + 1)/x` otherwise, every `f ≠ 0`
+reaches `1`: Hicks–Mullen–Yucas–Zavislak, *Amer. Math. Monthly* 115 (2008) 615–622, stopping time
+`≤ deg(f)² + 2·deg(f)`; improved to `O(deg(f)^{1.5})` by Alon–Behajaina–Paran, arXiv 2401.03210
+(2024). Reproduced here exhaustively (`run_123` P4): maximal stopping times `9, 15, 21, 29, 35, 43,
+51` at degrees `4, 6, …, 16` — our journal had sampled `37, 39` for the last two; corrected. **The
+mechanism, stated exactly:** a rise adds *exactly one* to the degree and a fall removes one, so
+along an orbit the degree never exceeds its starting value — **the size face closes for free**, the
+orbit lives in a finite set, and the theorem is the finite check that no other cycle sits inside it.
+Over `ℤ` the rise adds `log₂3 = 1.58496…` bits: no finite box. *The polynomial world removes exactly
+one thing — the irrationality of `log₂3` — and the conjecture falls.* This is the second, external
+witness the campaign's §175 asked for, not for a theorem but for the diagnosis: REQ-067 on our
+side (`log₂3` is a generic irrational, nothing to extract) and a literature that never worked on
+our problem (1976→2025) say the same sentence.
 
 ## The diagnostic map — the seven located reasons the wall resists
 
@@ -108,10 +123,70 @@ a method makes*, located precisely:
 7. **Finiteness of the quotient (§96):** every finite model of `ℤ` inherits cycles `ℤ` does
    not — the ⊢ result above, seen as the seventh coordinate.
 
-Read together: the size/archimedean face is *balanced* (2, 3), the arithmetic/2-adic face is
+Read together: the size/archimedean face is *balanced* (2, 3, 8), the arithmetic/2-adic face is
 where the real obstruction sits (7), and the effective tools reach only the balanced face
-(4, 5, 6). This is the same "one obstruction, three faces" the note maps, from the side of the
+(4, 5, 6, 9); 10 says why one more tool of the same kind will not change the reading. This is the same "one obstruction, three faces" the note maps, from the side of the
 *tools* rather than the *problem*.
+
+8. **Absence, not barrier (§167) — restated on the round-15 audit (2026-09-22).** For a gap word
+   `g = (g₀,…,g_{k−1})` with `S = Σg = ⌈k·log₂3⌉`, the cycle numerator is
+   `N(g) = Σ_j 3^{k−1−j}·2^{g₀+…+g_{j−1}}` (prefix sums), with `x₀·d = N(g)`, `d = 2^S − 3^k`, on every
+   integer cycle (checked on `1, −1, −5, −7, −17, −25, −41`). Over all `C = C(S−1, k−1)` words,
+   exhaustively at `k ≤ 15`: the residue `0` has count **exactly `0`** for `3 ≤ k ≤ 15` (as the machine
+   verification already implies), and the residue counts are **not** Poisson(`C/d`) — under-dispersed
+   from multiplicity `3` on (`k = 15`: `1,725,804 / 598,138 / 94,773 / 8,918 / 631 / 43` against
+   `1,734,412 / 583,676 / 98,211 / 11,017 / 927 / 62`, i.e. `−0.5 / +2.5 / −3.5 / −19 / −32 / −31 %`).
+   What survives of the diagnostic: `0` is one of the 71 % of residues with count `0` — undistinguished
+   in that weak sense only; the collisions `N(g) ≡ N(g′) (mod d)` are a structured event, measured and
+   not explained. (`run_125` P1–P3, published.)
+   > **Withdrawn (2026-09-22).** As first written this item read: *"the counts of residues follow
+   > Poisson(`C/d`) to `0.1 %` (`k = 15`: `1,735,122 / 582,630 / 98,147 / 11,440 / 905 / 64` against
+   > Poisson `1,734,412 / 583,676 / 98,211 / 11,017 / 927 / 62`), and the residue `0` is undistinguished
+   > — millions of residues share its count. … A theorem of equidistribution here would prove the
+   > absence, not a wall."* Those are the figures of `run_120`, whose `corrsum` takes **suffix** sums,
+   > `Σ_j 3^{k−1−j}·2^{g_{j+1}+…+g_{k−1}}` — not the cycle numerator: it is `≡ 0 (mod d)` at
+   > `k = 3, 4, 5, 8, 11` where no cycle exists, and misses the doubled trivial cycle `(2,2)`. The
+   > Poisson fit to `0.1 %` is a property of that other sum. Caught by the round-15 review's request for
+   > an operational definition; `run_120.py` stays published with this note beside it.
+9. **The reach of exact structure (§169):** the repeated-word law retires `5.1·10⁻⁸` of the admissible
+   words at `k = 24` and none at half the lengths — exact, two-keyed, and not where cycles live
+   (L-A2 scope note, figures corrected before sending).
+10. **The second-witness criterion (§175) — the reading key of this map.** Every tool above speaks one
+    language (trajectory, gaps, powers of 2 and 3, `corrsum`); descriptions in one language never
+    contradict each other, and an exclusion needs two descriptions from disjoint routes that collide
+    (`√2`: ratio *and* parity; Fermat: Frey curve *and* modularity). Six instruments, one witness.
+    The first candidate second witness that exists is the `F₂[x]` fact above — and it witnesses the
+    diagnosis, not the theorem.
+
+## The reading for a second witness (2026-09-12) — what exists, and what it reaches
+
+Under §175's criterion — a theorem that already exists, reached by a route that does not speak our
+words, and able to collide with our description of a cycle — six languages were read at source
+(logic and automata, S-unit equations, `×2×3` rigidity, `p`-adic methods, Mahler's `Z`-numbers,
+combinatorics on words). **No second witness for the theorem. Half of one for a single word.
+Three more for the diagnosis.**
+
+- **Half a witness, and it lands on L-A11.** Knight, *Discrete Math.* 349 (2025) 114812: the cycle
+  whose parity vector is the upper Christoffel word — the circularly balanced word — is never
+  integral, by the reversal symmetry of Christoffel words, with no Baker input. With L-A2 reducing
+  non-coprime `(S, k)` to the coprime case, **the balanced cycle is excluded at every length**, by a
+  tool that is not ours. Foreign tool, our object; reach: circular words whose reverse is a
+  rotation. Details and measurements in L-A11.
+- **Logic.** Cobham (1969)–Semënov (1977): a set definable in base 2 *and* base 3 is semilinear.
+  A January-2026 preprint (Dhiman–Pandey, arXiv 2601.12772 v2) shows the `k`-step transition
+  relation of generalised Collatz, with `k` carried as `2^k`, is not definable in base-2 Büchi
+  arithmetic — because it would define `{3^k}`; **its witness is our L-A10 residue**:
+  `T^k(2^k·m − 1) = 3^k·m − 1` (checked, `run_124` P7). The `×2×3` obstruction, said in logic.
+- **Computation.** Stérin–Woods (RP 2020, arXiv 2007.06979): the Collatz process *is* a
+  base-3-to-base-2 converter; the cyclic conjecture is encoded there as a reachability problem;
+  predicting half the bits of `T^i(x)` is in `NC¹` outside `AC⁰`.
+- **The bridge that exists between words and the 2-adic face.** López–Stoll, *Integers* 9 (2009) #A13, 141–162:
+  the 2-adic conjugacy image `Φ(v)` of a Sturmian word, computed as a generalised continued
+  fraction; aperiodic `v` with eventually periodic `Φ(v)` remains unknown.
+- **Not found**, stated so the next reader does not repeat it: no S-unit / subspace-theorem
+  treatment of Collatz cycles; no Skolem–Mahler–Lech; no Ostrowski numeration in the Collatz
+  literature (L-A8's grid seems to have no antecedent); Mahler's `Z`-numbers are a cousin
+  (the `×3/2` map without halving), not a witness.
 
 ## The one door that stayed open
 
@@ -119,4 +194,4 @@ Across the whole campaign — and, from your record, across yours — exactly on
 instrument is neither closed nor blind: **Furstenberg's `×2×3` zero-entropy measure rigidity**
 (open since 1967; Rudolph–Johnson 1990 needs positive entropy, which is exactly what this
 problem lacks). It is `aeh.md` 13.6.7's "one missing genre of theorem", seen from the ergodic
-side. Neither of us has the tool. If there is a next front, it is there.
+side. Neither of us has the tool. If there is a next front, it is there. One precision from the reading: Furstenberg's *intersection* conjecture in the same family **is proved** — Shmerkin, *Ann. of Math.* 189 (2019) 319–391, and Wu, *Ann. of Math.* 189 (2019) 707–751: for `A` closed `×p`-invariant and `B` closed `×q`-invariant, `log p/log q ∉ ℚ`, `dim_H((uA+v) ∩ B) ≤ max(0, dim A + dim B − 1)` — a rigidity theorem that exists, in the right family, with **no known bridge** to a cycle. The zero-entropy *measure* rigidity is the part still open, and it is the part a cycle would need.
