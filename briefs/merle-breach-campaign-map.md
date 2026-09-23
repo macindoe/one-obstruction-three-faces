@@ -188,6 +188,57 @@ Three more for the diagnosis.**
   literature (L-A8's grid seems to have no antecedent); Mahler's `Z`-numbers are a cousin
   (the `×3/2` map without halving), not a witness.
 
+## Round 16 reading (2026-09-23) — what the new papers do and do not change
+
+Swept 2025-01 → 2026-09-23 (six verifiers and two adversarial referees, then redone here). **Nothing
+changes a ledger theorem.** In order of weight:
+
+- **The one-move observation — a reformulation, graded as such.** For a parity word `w` of length `N`
+  with `r` ones at `p₀ < … < p_{r−1}`, the cycle point is `C(w)/d`, `C(w) = Σ_j 2^{p_j}·3^{r−1−j}`,
+  `d = 2^N − 3^r`. If two rotations of `w` differ by moving **one** 1 across `t` zeros, their `C`
+  differ by exactly `2^p·(2^t − 1)·3^{r−1−j}`; an integral cycle would need `d | 2^t − 1`
+  (`gcd(d, 6) = 1`). **`t = 1` is Knight's own argument** (his remark after Example 5.5: `u01` and
+  `u10`, "whose simple difference provides the necessary contradiction"), and `t = 1` occurs exactly
+  for the Christoffel necklace (Pirillo 2001, via Berstel 2007, Prop. 10). **`t = N − r` is the circuit,
+  and `d | 2^{N−r} − 1` is Steiner's elementary reduction** (Knight §3; Simons–de Weger 2005, the
+  `m = 1` chain equation). What the single statement adds is only a reading of *why* Baker is needed
+  for one and not the other: the move length — `t ≤ 2` is unconditional, and at `t = N − r` the
+  condition `d > 2^t − 1` is exactly Steiner's Diophantine regime. For `r ≥ 2` the class is exactly
+  the necklaces whose cyclic zero-run sequence takes two values `a, a+t` and is balanced (near the
+  seam: balanced blocks of 1s, every zero run equal to `t`); its share of primitive necklaces falls
+  exponentially (`56 / 233,324` at `N ≤ 24`). **It excludes nothing Steiner and Knight did not**: every
+  move length satisfies `t ≤ N − r`, so its class exclusion reduces to Steiner's inequality. The
+  general-`t` statement and the characterization were not found in Knight, Fernández–Ibáñez,
+  Simons–de Weger or the searches made — absence of evidence, not a novelty claim. (`run_126`, 13
+  checks; characterization verified independently to `N ≤ 26`.)
+- **Fernández–Ibáñez, arXiv 2607.24844 (July 2026) is a rediscovery.** Its main theorem — the
+  Christoffel word uniquely maximizes the smallest cycle member at fixed `(N, r)` — is
+  **Halbeisen–Hungerbühler, Acta Arith. 78 (1997), Lemma 5 + Corollary 1** (read at source: the same
+  functional, the same ceiling word `s̃_i = ⌈in/l⌉ − ⌈(i−1)n/l⌉`), restated by Knight §4 with credit;
+  F-I do not cite H-H and call theirs "the first result" of the kind. Its Theorem 8.1 (`N ≤ 2r`) and
+  8.2 (Eliahou-type bound) follow in one line from the product identity. Also: a gap in the attainment
+  step (repairable), a false closing claim at `N/r = 2` (the trivial cycle), and a strict inequality in
+  Prop. 7.1 that fails exactly when `r | N`. Combining it with Knight changes no bound. Nothing for us.
+- **Hochman, arXiv 2609.21481 (18 Sep 2026)** — zero-entropy progress in the right family: for
+  multiplicatively independent `a, b` and a zero-entropy non-atomic `×a`-invariant `μ`, `μ`-a.e. point has
+  a dense `×b` orbit. Not the `×2×3` measure rigidity the door below needs, and no bridge to cycles —
+  but it is the first result in the zero-entropy regime we have seen move. Abstract read only.
+- **Williams, arXiv 2607.01718 (July 2026)** — the coordinates `n = λ·2^a·3^b − 1` are the classical
+  all-rise identity `T(x)+1 = (3/2)(x+1)` (Terras); its "why is `p = 3` special?" is answered by L-A10's
+  shift: writing `(p−2)x + d = λ·2^a·p^b` diagonalises every `T_{p,d}`. Vocabulary, not leverage.
+- **López–Stoll, arXiv 2101.12747 (2021)**, the same authors' follow-up to the *Integers* 9 paper above:
+  aperiodic `v` maps to an aperiodic 2-adic integer when `liminf(h/l) > ln 2/ln 3`, with Sturmian parity
+  vectors as the test case — the literature's nearest neighbour to L-A11's Sturmian word.
+- **Diagnostic 8, one hypothesis tested and refuted.** *Is the true numerator's under-dispersion a range
+  cap* — the cycle points `n₀ = N(g)/d` living in a short interval, so each residue can be hit at most once
+  per integer? No: at `k = 15` the points span `[5, 2012]`, and a Poisson-binomial slot model built on the
+  measured slot occupancies explains about a tenth of the deficit (multiplicity 3: observed `8,918`,
+  slot model `10,762`, Poisson `11,017`). The under-dispersion stays measured and unexplained.
+- Housekeeping from the same sweep: the archival verification bound is still `2⁷¹` (Barina 2025;
+  the live counter stands at `2075·2⁶⁰`); ccchallenge lists Knight as *being formalised*, and Hercher 2023
+  and Eliahou 1993 as *ready to be audited*; the Hercher corrigendum and the Lean kernel re-check are
+  recorded in the ledger.
+
 ## The one door that stayed open
 
 Across the whole campaign — and, from your record, across yours — exactly one native-infinity
