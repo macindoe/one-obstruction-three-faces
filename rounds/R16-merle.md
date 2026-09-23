@@ -57,6 +57,27 @@ the block is therefore the grade L-A8's own chain has: kernel on the analytic ch
 the two continued-fraction facts and on the multiples glue. The withdrawn number is back as a
 theorem, with its withdrawal still on the page.
 
+## 6. Addendum, 2026-09-23, before your review: a kernel re-check, and a reading.
+
+**The one that matters.** Lean kernel soundness bug #14576 (an axiom-free proof of `False`, fixed in
+v4.32.2 on 28 July) postdates the v4.27.0 kernel on which every Lean key in our ledger was turned —
+including this round's `acd7063`. None of our files builds declarations by hand, so the exposure was
+remote; I re-ran the kernel anyway. All six files compile on **Lean 4.34.0 + Mathlib v4.34.0**, 0 errors,
+0 `sorryAx`, 40 declarations all within `[propext, Classical.choice, Quot.sound]`; the only source changes
+are an import path and two Mathlib renames. A notice at the head of the ledger records it for L-A1, L-A4,
+L-A5, L-A7 and L-A8. The sweep found the bug, not us.
+
+**The reading.** The map gains a section; the short version: Hercher's `m ≤ 91` stands (a June 2026
+corrigendum repairs the proof of his Theorem 21, noted in L-A11); Fernández–Ibáñez (July 2026) is a
+rediscovery of Halbeisen–Hungerbühler 1997 Lemma 5, uncited; Hochman (September 2026) moves in the
+zero-entropy regime near our open door without reaching it; Williams (July 2026) is the all-rise
+identity, and L-A10's shift answers the question it leaves open. And one observation of ours, graded
+down before it reached you: a single 1 moved across `t` zeros between two rotations forces
+`d | 2^t − 1` — which is your Knight at `t = 1` and Steiner's elementary half at `t = N − r`, and
+explains nothing new except *why* one needs Baker and the other does not. The class it covers is
+characterized exactly and is thin; it excludes nothing Steiner and Knight did not. Offered as a map
+item, not as a ledger entry — your attention is better spent elsewhere.
+
 ## 5. The rest is in the round-15 comment.
 
 The section-167 withdrawal, the `k ≥ 3` clause, the citation, and the grading question on your
