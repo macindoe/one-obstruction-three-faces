@@ -66,6 +66,14 @@ with a retraction header and nothing removed, so the record shows the canary fir
 Nothing in the conclusion depended on it: `run_049`'s own argument is that phantom-ness is
 *beside the point*, since every edge is realised by real integers.
 
+*(Amended in round 17, 2026-09-26: this retraction was itself wrong in part. A corrected version of
+`run_048` ran on 2026-08-05 from standard input and was never saved; recovered verbatim, its output is
+byte-identical to the archived one (sha256 `fbcd923987a75419…`, fingerprinted that day). "Does not run" and
+"never tests `p = 7`" stand for the committed file; "never produced", "no artifact behind it" and "the
+report did not listen" do not. The figure is restored at its true scope — 330 faulty cycles, 0 realised,
+`p = 7, k = 8`, `L ≤ 11` exhaustive — see `rounds/R17-merle.md` §1. The cause given above for
+the `x = −6` was also wrong: the accumulator omits the factor `p` on an ascent (`run_130`).)*
+
 **(b) A formulation of mine, retracted before you have to catch it.** The witness does **not**
 climb forever inside its residue class. `511 → 767 → 1151`, and `1151 ≡ 127 (mod 256)`: it
 leaves at step 2, because the lift of `767` in `ℤ/2^{k+1}` is `255`, not `511`. My own canary
