@@ -46,6 +46,13 @@ failure reason I have that sits in the tool, not the problem — and it is what 
 > any of it — the standing run's own argument is that phantom-ness is *beside the point*, since
 > every edge is realised by real integers (20,000 checked). Kept visible rather than deleted, and
 > detailed in L-A10.
+>
+> *(Amended in round 17, 2026-09-26: this withdrawal was itself wrong in part. The corrected census did
+> run, on 2026-08-05, from standard input, unsaved; recovered, its output is byte-identical to the archive
+> (sha256 `fbcd923987a75419…`). At `p = 7, k = 8`: 330 faulty cycles, 0 realised, exhaustive for `L ≤ 11`,
+> on §96's both-lifts graph. "Halts on its own canary" and "never tests `p = 7`" are true of the committed
+> file only; and its "wrong again" `x = −6` came from an accumulator missing the factor `p`, not from a missing
+> parity check (`run_130`). See `rounds/R17-merle.md` §1.)*
 
 **Cross-side, round 13 — what came back (2026-09-03).** Your review reconstructed the
 telescoping mechanism independently, and it reproduces exactly at `p=7, k=8`: 4 residue cycles,
@@ -64,6 +71,9 @@ exactly on your object, and the cause is the one your own note named — the acc
 a single canonical successor keeps the `m = 0` branch, and for `p = 3` the witness edge lives on
 the other one at every `k` (not universally in `p`: L-A10 carries the count). Your measurement was right; the object was not ours. The resolution, the artifacts and the
 two retractions it forced are in `LEDGER.md` **L-A10**, seeded at one key for yours.
+*(Amended in round 17, 2026-09-26: "never computed at all" above is wrong — the census was computed on
+2026-08-05 and is restored in `rounds/R17-merle.md` §1. It is still on a different graph from yours, and
+the two 100 % figures remain unrelated.)*
 
 **⊢ No metric descent of the excursion form (§80, §85).** The excursion is the maximum of a
 multiplicative walk (×3/2 or ×1/2, each with probability ½ under the §75 bijection). Its tail

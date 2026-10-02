@@ -110,6 +110,12 @@ face:
 > cycles are phantoms — removing them and greedily reducing to a satisfiable system yields
 > an `f` that then fails on 42 % of tested integers.
 
+*(Amended in round 17, 2026-09-26: the "100 %" figure above was withdrawn in round 14 (§3(a)) and that
+withdrawal was itself wrong in part — the corrected run existed, unsaved, and is recovered byte-identical.
+Its true scope: `p = 7, k = 8`, 330 faulty cycles of length `L ≤ 11`, none realised, exhaustive, on the
+both-lifts graph of §96 — not "the accelerated map". The 42 % clause is not re-examined there. See
+`rounds/R17-merle.md` §1.)*
+
 Scope, stated tight: it closes the family `V = x·f(x mod 2^k)` at *fixed* `k`. The only
 escape — `k` growing with `x` — is sterile: it stops compressing at all and falls back to
 the full parity vector, i.e. "almost every integer". This is the first failure reason I
