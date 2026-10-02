@@ -33,7 +33,7 @@ your "identifies its own cause correctly," your offer (a)'s "factor-2 slip," you
 "missing the factor 2." Each carries an amendment beside it; the closure statement gains its
 clause; a dated block at the end of the entry carries the argument, the numbers, the glue fact
 and the negative control (even at the best `R` any admissible word allows, the route stays
-below `q₂₂`; Hercher's bound would need `R/n ≤ 0.5727`). The Lean header carries the same note.
+below `q₂₂`; reaching even `q₂₂`, one convergent short of Hercher's own `q₂₃`, would need `R/n ≤ 0.5727`). The Lean header carries the same note, in the earlier wording ("Hercher's bound"); this sentence supersedes it — corrected before merge, per Macindoe's round-16 review.
 
 ## 4. Grade, and the plan.
 

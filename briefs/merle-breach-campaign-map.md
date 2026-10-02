@@ -206,7 +206,7 @@ changes a ledger theorem.** In order of weight:
   condition `d > 2^t − 1` is exactly Steiner's Diophantine regime. For `r ≥ 2` the class is exactly
   the necklaces whose cyclic zero-run sequence takes two values `a, a+t` and is balanced (near the
   seam: balanced blocks of 1s, every zero run equal to `t`); its share of primitive necklaces falls
-  exponentially (`56 / 233,324` at `N ≤ 24`). **It excludes nothing Steiner and Knight did not**: every
+  exponentially (`56 / 233,324` at `N ≤ 24`; gap recorded at Macindoe's round-16 review: the class definition behind this count is not recoverable from the archived text, and the standard necklace counts give 698,870 or 1,465,020 — the figure is unreproduced and should not be cited). **It excludes nothing Steiner and Knight did not**: every
   move length satisfies `t ≤ N − r`, so its class exclusion reduces to Steiner's inequality. The
   general-`t` statement and the characterization were not found in Knight, Fernández–Ibáñez,
   Simons–de Weger or the searches made — absence of evidence, not a novelty claim. (`run_126`, 13
