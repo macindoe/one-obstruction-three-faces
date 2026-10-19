@@ -14,17 +14,19 @@ Machine-checking of the cycle literature is not new here either: on the register
 
 ## The counting dichotomy
 
-The dichotomy is Macindoe's, published in [1]. The label *counting dichotomy* is Merle's contraction of that paper's phrases — "a sharp dichotomy for counting arguments" and "the counting-limit dichotomy developed here" — and is used here as a pointer to those phrases, not as standing terminology.
+The dichotomy is stated in [1]; credit for each half is given below. The label *counting dichotomy* is Merle's contraction of that paper's phrases — "a sharp dichotomy for counting arguments" and "the counting-limit dichotomy developed here" — and is used here as a pointer to those phrases, not as standing terminology.
 
-**Upper half** (Theorem 4.5 of [1]). A trim uniform in the number of blocks `p` exists and, combined with an effective irrationality measure for `log₂3`, gives **effective finiteness at every period**: in [1]'s notation, `n ≤ n₀(p) = O(p·(log₂3)^p)`. Effective finiteness is the proved statement — not that any period is closed; this note claims no closure.
+**Upper half** (Theorem 4.5 of [1]). A trim uniform in the number of blocks `p` exists and, combined with an effective irrationality measure for `log₂3`, gives **effective finiteness at every period**: in [1]'s notation, `n ≤ n₀(p) = O(p·(log₂3)^p)`. This half is Rozier's [5] (Théorème, p. 8; Lemme 4, p. 11, with the same exponent `(log₂3 − 1)/((log₂3)^p − 1)`), made explicit by Simons–de Weger [6] (Lemma 7, Lemma 14, Theorem 3(d)), whose number `m` of local minima is [1]'s `p` exactly; finiteness for each `m` is also Brox [7]. [1]'s Theorem 4.5 is a rederivation by another route (rotation numerators and a max-plus recursion). Effective finiteness is the proved statement — not that any period is closed; this note claims no closure.
 
-**Lower half** (Theorem 4.6 of [1]). No trim uniform in `p` can extend the small-period constants: configurations exist that satisfy every rotation's exact size condition `q ≤ R_r` (notation of [1] §4: `q = 2^K − 3^n` the seam quantity, `R_r` the rotation sums) while the slack `γ = K − log₂ q` falls far below any polynomial-in-`p` extension of the constants of periods 2–3 — the *staircase* family, divergent-orbit profiles bent into loops, which "shows counting cannot do substantially better" [1, abstract]. The theorem's accompanying assessment — all size conditions passed at every `p` — has since been proved in the project record ([1], *Status of the assessment*): a witness at every period (unconditional for `p ≥ 16`, finite check for `3 ≤ p ≤ 15`, exhibition at `p ∈ {2, 4}`), `γ` between `3.683012` and `5.140212` [1]. Every witness fails the divisibility conditions `q | R_r`: "sharper evidence that counting cannot do better, and no evidence about exclusion" [1].
+**Lower half** (Theorem 4.6 of [1]). No trim uniform in `p` can extend the small-period constants: configurations exist that satisfy every rotation's exact size condition `q ≤ R_r` (notation of [1] §4: `q = 2^K − 3^n` the seam quantity, `R_r` the rotation sums) while the slack `γ = K − log₂ q` falls far below any polynomial-in-`p` extension of the constants of periods 2–3 — the *staircase* family, divergent-orbit profiles bent into loops, which "shows counting cannot do substantially better" [1, abstract]. The theorem's accompanying assessment — all size conditions passed at every `p` — has since been proved in the project record ([1], *Status of the assessment*): a witness at every period (unconditional for `p ≥ 16`, finite check for `3 ≤ p ≤ 15`, exhibition at `p ∈ {2, 4}`), `γ` between `3.683012` and `5.140212` [1]. Every witness fails the divisibility conditions `q | R_r`: "sharper evidence that counting cannot do better, and no evidence about exclusion" [1]. The optimality is not first in [1]: Rozier [5, p. 11] observes, by a minimax over positive real run-length tuples, that his bound is optimal given his per-minimum inequalities, Simons–de Weger [6, p. 69] expected the exponential dependence on `m` to be unavoidable, and Halbeisen–Hungerbühler [8] proved the analogue in the cycle-length parameter — an optimal size criterion attained by an explicit rational cycle at every length (Lemma 5, p. 230). What is [1]'s is the realization in integers, in the block parameter: configurations meeting every rotation's exact size condition at bounded slack `γ`, at every period.
 
 ## The obstruction, located
 
 A note titled for one obstruction must say which it means. Macindoe's record carries four statements of where the difficulty lives, at four grades — a proved consumption identity, an organizing heuristic, an organizing observation, and one theorem — and this note's obstruction means the theorem: the closing sentence of Theorem 4.6 of [1], quoted exactly:
 
 > "Uniform cycle exclusion therefore requires the divisibility system — equivalently, rigidity of the closed anchor walk `Σₜ ΔMₜ = 0`."
+
+The sentence is [1]'s; its moral is older. In the cycle-length parameter, Halbeisen–Hungerbühler [8, p. 238] showed that size arguments "*cannot* be successful" and that further progress "would hence involve number theoretical arguments", reducing what remains to the divisibility condition at every rotation; in the parameter `m`, Simons–de Weger [6, p. 69] expected the same. [1]'s theorem carries the moral into the block parameter `p` (= `m`).
 
 The gloss both records agree on: a cycle is a closed walk in the 2-adic anchor coordinate of [1]; counting bounds that walk's size and Theorem 4.6 caps counting; uniform exclusion requires "arithmetic (divisibility) input, not sharper counting" [1, abstract]. Neither record proves that requirement unattainable, or attains it. The obstruction is located, not overcome.
 
@@ -59,3 +61,11 @@ This note is a collaborative effort of mutual verification. Each claim raised wa
 [3] D. Barina, *Improved verification limit for the convergence of the Collatz conjecture*, J. Supercomputing 81 (2025), article 810; DOI 10.1007/s11227-025-07337-0.
 
 [4] The Collatz Conjecture Challenge, [ccchallenge.org](https://ccchallenge.org) — register entries `BohmSontacchi1978` (Formalised), `Knight2026` (Being formalised), `Eliahou1993` (Ready to be audited); consulted 2026-07-28.
+
+[5] O. Rozier, *Problème de Syracuse : « majorations » élémentaires des cycles*, Singularité 2, no. 5 (1991), 8–11.
+
+[6] J. Simons, B. de Weger, *Theoretical and computational bounds for m-cycles of the 3n+1-problem*, Acta Arith. 117 (2005), 51–70; DOI 10.4064/aa117-1-3.
+
+[7] T. Brox, *Collatz cycles with few descents*, Acta Arith. 92 (2000), 181–188.
+
+[8] L. Halbeisen, N. Hungerbühler, *Optimal bounds for the length of rational Collatz cycles*, Acta Arith. 78 (1997), 227–239; DOI 10.4064/aa-78-3-227-239.
