@@ -2,6 +2,8 @@
 
 Status vocabulary: `proposed` / `one key` / `two keys` / `refuted` / `corrected`. Artifacts are commit-pinned where possible. Entries are append-mostly; corrections extend an entry rather than rewriting it.
 
+**Reading note (Merle, 2026-10-02, round 18).** An entry's status is its **last** `Key status` line. Several entries (L-A4, L-A6, L-A7, L-A8, L-A9) still open with the `DRAFT — one key` line of their first version; those opening lines are kept as written, and the later `Key status` line governs.
+
 ---
 
 **Kernel re-check on a patched Lean (Merle, 2026-09-23, round 16).** Lean 4 kernel soundness bug [leanprover/lean4#14576](https://github.com/leanprover/lean4/issues/14576) — an axiom-free proof of `False` through wrong-structure projections, filed and fixed 2026-07-28 in **v4.32.2** — postdates the **v4.27.0** kernel on which every Lean key in this ledger was turned (L-A1 `TransportRecurrence`, L-A4 `ContentDescent`, L-A5 `ContentSeparation`, L-A7 `DeficitLemma`, L-A8 `T1Structure` + `LegendreApprox`). Its reproduction builds a declaration by hand through `addDecl`; none of these files does anything of the kind, so the exposure was remote — but the remedy is to run the kernel again, not to argue. Done: all six files recompiled in a fresh project on **Lean 4.34.0 + Mathlib v4.34.0**, hardened four-check protocol — **0 errors, 0 overflow/abort, 0 `sorryAx`, 40 declarations, every one within `[propext, Classical.choice, Quot.sound]`**. Five files byte-identical; `T1Structure` differs by three lines (the import path, and Mathlib's 2026-09-01 renames `Finset.prod_le_prod → prod_le_prod₀`, `prod_lt_prod_of_nonempty → …₀`, same statements). No proof changed; no key status moves. Record: `ericmerle3789/one-obstruction-three-faces-lean` `recheck-v4.34/` at `9934df4` (`RECHECK.md`, `axioms_v4.34.txt`). Found by the literature sweep of 2026-09-23, not by us noticing.
@@ -528,6 +530,7 @@ The two points therefore carry **the same** value of `f`, and `V(T(x)) = T(x)·f
 **Artifacts — Merle:** `ericmerle3789/one-obstruction-three-faces-lean` at commit `db0e89d`: `experiments/run_050.py` (the exact reprise — 14 checks, 0 failures, integer arithmetic throughout: 4000 `(p,k)` pairs `p = 3..201` odd, `k = 1..40`; 2880 positive witnesses; the divergence diagnosis; the negative control) with `run_050_output.txt`; `experiments/run_049.py` and its output (the standing §96 run, P1's 20,000 edges) — one line of it is platform-dependent and the entry does not rest on it: P3's count "V ne decroit PAS : 17002" is a float-tie count (on this side 14,466 strict rises plus 2,536 exact float ties; your side prints 15,396), the verdict and the counterexample being identical; `experiments/run_048.py` and its output, committed **with its canary firing**, as the record of the retraction.
 
 **Key status: one key (Merle).** Yours is invited on this entry as you proposed. Placement in the note, as you set it: the principle in one sentence in the body's 2-adic paragraph, the theorem itself in the marked apparatus section.
+*(Amended in round 18, 2026-10-02: **two keys.** Macindoe's approving review of PR #4 (round 14, 2026-09-12) turned the second key on this entry — "The second key turns on L-A10." — and this line was not updated at merge. Nothing else in the entry changes.)*
 
 ---
 
