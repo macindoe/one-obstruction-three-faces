@@ -18,7 +18,7 @@ The δ8 impossibility (Merle side): why no uniform Product-Bound refinement clos
 
 ## 3. Face II — digits (the 2-adic body)
 
-Reduced coordinates and the anchor walk; the transport recurrence and the collapse of the `p` divisibility conditions to **one** [L-A1: Halbeisen–Hungerbühler 1997 Lemma 9 and Seifert 1988 Thm 1 in the letter frame, rediscovered simultaneously in block form (round 20); seam identity `N_r + q = 2^{m_r} R_r`, Lean 4 kernel-3 artifact + fixed-point proof]; the repeated-word gcd law [L-A2: two keys; immediate from Halbeisen–Hungerbühler 1997 eq. (4)] — closure under repetition is inherited, never created.
+Reduced coordinates and the anchor walk; the transport recurrence and the collapse of the `p` divisibility conditions to **one** [L-A1: found independently on both sides in July 2026, in block form, and already in Seifert 1988 (Theorem 1 and the remark after it: the odd-position frame, both signs) and in Halbeisen–Hungerbühler 1997 (Lemma 9: the letter frame, the gcd form); seam identity `N_r + q = 2^{m_r} R_r`, Lean 4 kernel-3 artifact + fixed-point proof]; the repeated-word gcd law [L-A2: two keys; immediate from Halbeisen–Hungerbühler 1997 eq. (4)] — closure under repetition is inherited, never created.
 
 ## 4. Face III — the seam (local–global)
 
