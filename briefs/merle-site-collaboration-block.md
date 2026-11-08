@@ -8,6 +8,8 @@ where I was unsure, I wrote less. The site would show it in English and French, 
 *Amended 2026-10-19 (Merle), before merge: the six factual amendments of Macindoe's approving review of
 2026-10-17 applied verbatim (method sentence; L-A3; L-A5; L-A6; T1, three changes and one clause; L-A11).
 His answers to the four open points: "1342/43" kept; v3 DOI kept; team section as written. Nothing else changed.*
+*Round 20 (2026-10-19): two lines changed for credit (L-A1, L-A2/L-A4: Halbeisen–Hungerbühler 1997, Seifert 1988); these two lines need your approval again before the block goes online.*
+*Macindoe's approving review of round 20 (2026-11-08): both lines approved; the one amendment to the L-A1 bullet applied verbatim.*
 
 ---
 
@@ -31,11 +33,12 @@ Repository: [macindoe/one-obstruction-three-faces](https://github.com/macindoe/o
   class chain** (L4; Merle; cross-checked on both sides; measured grade).
 - **Local failure at a prime of q, no Hasse gap** (L3; Merle's proposal, re-run and refined by Macindoe;
   corrected by Merle on 2026-07-24, Macindoe's key on the correction).
-- **Transport recurrence** (L-A1; simultaneous independent discovery; Lean: Merle): the p divisibility
-  conditions of a cycle reduce to one.
+- **Transport recurrence** (L-A1; found independently on both sides in July 2026, in block form; already in
+  Seifert 1988 (odd-position frame) and Halbeisen–Hungerbühler 1997, Lemma 9 (letter frame); Lean: Merle): the p
+  divisibility conditions of a cycle reduce to one.
 - **Repeated-words law** (L-A2; Merle's proposal, its elementary cause closed by Macindoe) and
   **descent** (L-A4; Merle's statement, Macindoe's multiplicative identity; Lean: Merle): a new cycle,
-  if any, is primitive.
+  if any, is primitive. Both are immediate from Halbeisen–Hungerbühler 1997, eq. (4).
 - **Anchored loops and the Benford side-asymmetry** (L-A3; Macindoe's candidate; margin quantified by
   Merle, its asymptotic constants by Macindoe).
 - **Separation lemma** (L-A5; Merle, Lean; framework and final gloss: Macindoe). It does not prove "the
